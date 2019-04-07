@@ -1,11 +1,8 @@
-import {NextFunction, Request, Response} from "express";
+import {Application, NextFunction, Request, Response} from "express";
 import express = require("express");
+import api = require("./api");
 const router = express.Router();
 
-/* GET home page. */
-// noinspection JSUnusedLocalSymbols
-router.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.render('index.pug', { title: 'Express' });
-});
+router.use("/api", api as Application)
 
 module.exports = router;
