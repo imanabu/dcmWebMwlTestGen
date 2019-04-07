@@ -60,6 +60,7 @@
     "strict": true // Keep this as the last so commas can be added in other configs
   },
   "include": [
+    ".",
     "./routes/*", "./routes/**/*", "/models/*", "./services/**/*", "./test/**/*"
   ],
   "exclude": [
