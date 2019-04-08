@@ -1,6 +1,6 @@
 # dcmWebMwlTestGen
 
-## Modality Worklist Test Generator for DICOM Web
+## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
 Version 0.0.1
@@ -8,20 +8,12 @@ Version 0.0.1
 Note this is still very bare bone but I plan to add more functionality as we build more 
 complex tests. Please provide your ideas in the Git Issues.
 
-For now what we needed was to generate a bunch of visits with hospital departments associated,
-and because I do need to map the departments with real existing ones at the hospital, I have
-to make them configurable. 
+This is a simple Node/Express app to generate a bunch of visits with hospital departments 
+associated, and serve them up via the DICOM QIDO /studies API. because I do need to map the 
+departments with real existing ones at the hospital, you can also configure realistic 
+clinical departament configurations as well. 
 
 ## What It Does
-
-List View of the Worklist Generated
-
-![Screen 1](scerenshots/2019-04-08_13-23-57.png)
-
-
-JSON View of the Worklist Generated
-
-![Screen 2](scerenshots/2019-04-08_13-24-14.png)
 
 It auto-generates somewhat realistic Modality Worklist entries for testing the workflow. We often need
 to test this from the MWL all the way to acquisition in our mobile photo app ZenSnapMD.com
@@ -36,9 +28,21 @@ Among the things this generates are;
   
 * Study dates are today's as you generate the worklist.
 
+It also has a UI to show/demonstrate you what it generates and show the resulting worklist
+items as a list or the raw JSON data.
+
+### List View of the Worklist Generated
+
+![Screen 1](scerenshots/2019-04-08_13-23-57.png)
+
+### JSON View of the Worklist Generated
+
+![Screen 2](scerenshots/2019-04-08_13-24-14.png)
+
 ## How Does It Work?
 
-When the DICOM QIDO request is made for /studies it returns the MWL entries (instead of modality studies).
+When the DICOM QIDO request is made for /studies it returns the MWL entries 
+(instead of modality studies).
 
 ## How To Install, Run and Improve It
 
