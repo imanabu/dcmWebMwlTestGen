@@ -1,5 +1,8 @@
+import _ = require("lodash/fp");
 import {Utils} from "./Utils";
 import {PersonGenerator} from "./PersonGenerator";
+import {departments} from "../Confg";
+import {IDepartment} from "../interfaces";
 
 export class MwlEntryGenerator {
 
@@ -17,7 +20,6 @@ export class MwlEntryGenerator {
     public patientIdOther = "";
     public patientName: string | null = null;
     public patientWeight = "0";
-    public requestingPhysician = "";
     public requestedProcedureId = "6789";
     public referringPhysiciansName = "";
     public sex: string | null = null;
@@ -26,10 +28,12 @@ export class MwlEntryGenerator {
     public scheduledProcedureStepTime: string | null = null;
     public scheduledProcedureStepId = "12345";
     public scheduledStationAE = "ZEN_SNAP_MD";
-    public scheduledStationName = "ZenSnapMD 4.1"
+    public scheduledStationName = "ZenSnapMD 4.1";
     public sopInstanceUid: string | null = null;
     public studyDescription = "";
     public studyUid: string | null = null;
+
+    public readonly modalities = ["CT", "MR", "DX", "PET", "US", "XA"];
 
     constructor(private patientGenerator: PersonGenerator | null = null) {
         if (!patientGenerator) {
@@ -48,16 +52,23 @@ export class MwlEntryGenerator {
         const studyUid = my.studyUid || Utils.generateUid();
         const accession = my.accession || Utils.genrateRandomId(8);
         const patientName = my.patientName || patient.name;
-        const modality = my.modality || "US";
+        const modality = my.modality || my.modalities[Math.floor(Math.random() * my.modalities.length)];
         const patientId = my.patientId || patient.mrn;
         const dob = my.dateOfBirth || patient.dob;
         const dobStr = Utils.formatDate(dob);
         const sex = my.sex || patient.gender;
         const now = new Date();
         const startDate = my.scheduledProcedureStepDate || Utils.formatDate(now);
-        const startTime = my.scheduledProcedureStepTime || Utils.formatDate(now);
-        const referringName = my.requestingPhysician || referring.name;
+        const startTime = my.scheduledProcedureStepTime || Utils.formatTime(now);
+        const referringName = my.referringPhysiciansName || referring.name;
         const attendingName = my.scheduledProcedureStepAttendingName || attending.name;
+
+        const activeDepartments = _.filter<IDepartment>(x => x.active)(departments);
+        const oneDept: IDepartment = activeDepartments[Math.floor(Math.random() * departments.length)];
+        const reason = oneDept.reasons[Math.floor(Math.random() * oneDept.reasons.length)];
+
+        const description = my.studyDescription || reason;
+        const theDepartment = my.department || oneDept.department;
 
         my.jsonEntry = {
             "00080005": {
@@ -94,18 +105,18 @@ export class MwlEntryGenerator {
                 "vr": "PN",
                 "Value": [
                     {
-                        "Alphabetic": my.referringPhysiciansName
+                        "Alphabetic": referringName
                     }
                 ]
             },
             "00081030": {
                 "vr": "LO",
-                "Value": my.studyDescription
+                "Value": [description]
             },
             "00081040": {
                 "vr": "LO",
                 "Value": [
-                    my.department
+                    theDepartment
                 ]
             },
             "00100010": {
@@ -183,7 +194,7 @@ export class MwlEntryGenerator {
             "00321060": {
                 "vr": "LO",
                 "Value": [
-                    my.studyDescription
+                    description
                 ]
             },
             "00321064": {
@@ -203,7 +214,7 @@ export class MwlEntryGenerator {
                         "00080104": {
                             "vr": "LO",
                             "Value": [
-                                my.studyDescription
+                                description
                             ]
                         }
                     }
@@ -256,7 +267,7 @@ export class MwlEntryGenerator {
                         "00400007": {
                             "vr": "LO",
                             "Value": [
-                                my.studyDescription
+                                description
                             ]
                         },
                         "00400008": {
@@ -303,7 +314,7 @@ export class MwlEntryGenerator {
                     my.requestedProcedureId
                 ]
             }
-        }
+        };
 
         return my.jsonEntry;
 

@@ -6,8 +6,8 @@
   "repository": "https://imanabu@github.com/imanabu/dcmWebMwlTestGen.git",
   "scripts": {
     "start": "./bin/www app.js",
-    "build": "tsc",
-    "c": "cd client && tsc",
+    "build": "tsc && cd client && tsc && webpack",
+    "c": "cd client && tsc & webpack",
     "s": "tsc && cd client && tsc",
     "test": "tsc && mocha -exit -r ts-node/register test/**/*.spec.ts"
   },
