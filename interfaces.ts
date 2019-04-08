@@ -1,5 +1,6 @@
 export interface IDepartment {
     active: boolean;
+    modalities: string[];
     department: string;
     reasons: string[];
 }

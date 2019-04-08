@@ -29,7 +29,7 @@ export class PersonGenerator {
         const patient = {} as IPerson;
         patient.name = `${lastName}^${firstName}^^^${suffix}`;
         patient.gender = first[1];
-        patient.mrn = Utils.genrateRandomId(8);
+        patient.mrn = Utils.generateRandomId(8);
 
         const today = new Date();
         const minYear = today.getFullYear() - 95;

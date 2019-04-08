@@ -3,10 +3,10 @@
 ## Modality Worklist Test Generator for DICOM Web
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0
+Version 0.0.1
 
 Note this is still very bare bone but I plan to add more functionality as we build more 
-complex tests.
+complex tests. Please provide your ideas in the Git Issues.
 
 For now what we needed was to generate a bunch of visits with hospital departments associated,
 and because I do need to map the departments with real existing ones at the hospital, I have
@@ -22,7 +22,8 @@ As such you can also use this to generate visits to feed the rest of your test w
 Among the things this generates are;
 
 * Realistic people names, correct with genders. Patient, Referring and Performing doctor names are
-  generated along with MRN, Accession and truly unique Study and Instance UIDs.
+  generated along with fairly unique MRN, Accession and truly unique Study and Instance UIDs.
+  Note that MRN/Accession are time based but the top digits are truncated so it might repeat some day.
   
 * Study dates are today's as you generate the worklist.
 
@@ -74,6 +75,7 @@ randomly.
        {
           "active": true,
           "department": "1234",
+          "modalities": [ "CT", "VL" ],
           "reasons": [
              "Minor Burn",
              "Fall",
@@ -85,11 +87,13 @@ randomly.
        
 * active: Means this entry will be used. 
 * department: It can be a code or a string like ER/ED. It maps to (0008,1040)
+* modalities: The modalities the department uses or requests.
 * reasons: List of the list of study reasons that can happen in this department.
 
 ## Contributions Are Welcome
 
-* Please stick with Mithril.js + webpack. It's simple and adequate for this purpose. Do not
-  change this into React.js or Vue and such that we don't use.
+* For minor stuff or you are not a code but have ideas please file the request in the Git Issues.
 
-* I try to do away everything with npm and do not add Gulp or stuff like that. 
+* Please stick with Mithril.js + webpack.
+
+* Let's keep this to work only with npm and no other build tools. 

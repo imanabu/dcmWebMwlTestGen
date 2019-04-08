@@ -42,17 +42,21 @@ export class MwlEntryGenerator {
     }
 
     public generateJson(): any {
-        // const iAm = "";
         const my = this;
+
+        const draw = <T>(items: T[]): T => {
+            return items[Math.floor(Math.random() * items.length)];
+        };
+
         const patient = my.patientGenerator!.generate();
         const attending = my.patientGenerator!.generate("MD");
         const referring = my.patientGenerator!.generate("MD");
 
         const sopInstanceUid = my.sopInstanceUid || Utils.generateUid();
         const studyUid = my.studyUid || Utils.generateUid();
-        const accession = my.accession || Utils.genrateRandomId(8);
+        const accession = my.accession || Utils.generateRandomId(8);
         const patientName = my.patientName || patient.name;
-        const modality = my.modality || my.modalities[Math.floor(Math.random() * my.modalities.length)];
+
         const patientId = my.patientId || patient.mrn;
         const dob = my.dateOfBirth || patient.dob;
         const dobStr = Utils.formatDate(dob);
@@ -64,10 +68,10 @@ export class MwlEntryGenerator {
         const attendingName = my.scheduledProcedureStepAttendingName || attending.name;
 
         const activeDepartments = _.filter<IDepartment>(x => x.active)(departments);
-        const oneDept: IDepartment = activeDepartments[Math.floor(Math.random() * departments.length)];
-        const reason = oneDept.reasons[Math.floor(Math.random() * oneDept.reasons.length)];
+        const oneDept: IDepartment = draw(activeDepartments);
+        const modality = my.modality || draw(oneDept.modalities);
 
-        const description = my.studyDescription || reason;
+        const description = my.studyDescription || draw(oneDept.reasons);
         const theDepartment = my.department || oneDept.department;
 
         my.jsonEntry = {

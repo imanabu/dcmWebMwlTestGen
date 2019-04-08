@@ -29,20 +29,8 @@ export class Main implements m.ClassComponent {
         const dp = m(`pre`, my.departments);
 
         const help = my.mode === "mwl" ?
-            m(".col.head-room", `Example URL: http://localhost:3000/api/studies?limit=${my.limit}`) :
-            m(".col.head-room", `To change this, go edit Config.ts file`);
-
-        const list = m("button.btn-margin.col.btn-med.btn-info", {
-            onclick: () => {
-                my.listMode = true;
-                my.getMwl.bind(my)(); },
-        }, "List");
-
-        const go = m("button.brn-margin.col.btn-med.btn-info", {
-            onclick: () => {
-                my.listMode = false;
-                my.getMwl.bind(my)(); },
-        }, "Raw");
+            m(".col.head-room", `Used QIDO API URL: http://localhost:3000/api/studies?limit=${my.limit}`) :
+            m(".col.head-room", `To change this, Edit Config.ts file, rebuild and run.`);
 
         const limitLabel = m("label[for=limit]", "Limit: ");
         const limit = m("input[id=limit][type=text][style=margin-left:10px]",
@@ -51,6 +39,19 @@ export class Main implements m.ClassComponent {
                 value: my.limit,
             });
         const limitCell = m(".col", [limitLabel, limit]);
+
+        const listButton = m("button.btn-margin.col.btn-med.btn-info", {
+            onclick: () => {
+                my.listMode = true;
+                my.getMwl.bind(my)(); },
+        }, "Gen & Show List");
+
+        const rawButton = m("button.brn-margin.col.btn-med.btn-info", {
+            onclick: () => {
+                my.listMode = false;
+                my.getMwl.bind(my)(); },
+        }, "Gen & Show JSON");
+
         const deptButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: my.getDepartments.bind(my),
         }, "Show Departments");
@@ -58,8 +59,8 @@ export class Main implements m.ClassComponent {
         const ctrlRow = m(".row",
             [
                 limitCell,
-                go,
-                list,
+                rawButton,
+                listButton,
                 deptButton]);
 
         const listHead = m(".row.list-header",

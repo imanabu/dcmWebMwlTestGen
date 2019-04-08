@@ -25,7 +25,7 @@ describe("Utils and Generator Functions", () => {
         });
 
         it("Can generate an ID", () => {
-            const id = Utils.genrateRandomId(8);
+            const id = Utils.generateRandomId(8);
             assert(id, "UID generation");
             assert.strictEqual(id.length, 8);
         });

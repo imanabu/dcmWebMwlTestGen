@@ -2,17 +2,24 @@ export class Utils {
 
     public static uidRoot = "1.2.345.678.90123";
     private static sequence = 0;
+    private static baseIdSequence = 0;
+    private static idSequence = 0;
 
-    public static genrateRandomId(size: number): string {
-        // const iAm = "";
+    public static generateRandomId(size: number): string {
         const my = this;
-        const r = Math.floor(Math.random() * 100000);
-        const rs = my.prefixZero(r, size);
+        if (!my.baseIdSequence) {
+            my.baseIdSequence = Date.now();
+        }
+        my.idSequence++;
+        let rs = my.prefixZero(my.baseIdSequence + my.idSequence, size);
+        const len = rs.length;
+        if (len > size) {
+            rs = rs.substr(len - size);
+        }
         return rs;
     }
 
     public static formatDate(dt: Date): string {
-        // const iAm = "";
         const my = this;
         const y = dt.getFullYear();
         const m = my.prefixZero(dt.getMonth() + 1, 2);
@@ -29,7 +36,6 @@ export class Utils {
     }
 
     public static generateUid(): string {
-        // const iAm = "";
         const my = this;
         my.sequence++;
         const date = new Date();

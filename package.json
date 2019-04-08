@@ -1,14 +1,13 @@
 {
   "name": "dcmwebmwltestgen",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "DICOM Web Based Modality Worklist Test",
-  "main": "index.js",
+  "main": "app.js",
   "repository": "https://imanabu@github.com/imanabu/dcmWebMwlTestGen.git",
   "scripts": {
     "start": "./bin/www app.js",
     "build": "tsc && cd client && tsc && webpack",
-    "c": "cd client && tsc & webpack",
-    "s": "tsc && cd client && tsc",
+    "client-build": "cd client && tsc & webpack",
     "test": "tsc && mocha -exit -r ts-node/register test/**/*.spec.ts"
   },
   "author": "Manabu Tokunaga, WinguMD, Inc.",
