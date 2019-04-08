@@ -59,8 +59,8 @@ We really do not need any fancy QIDO query stuff here. So no date range query no
 element level query is supported. (You are welcome to add those things. Just fork it.)
 Go ahead and specify them but they will be ignored.
 
-Only exception to that is that tt supports `?limit=number` so that you can 
-pull 100's and 1000's of entries at a time, and it will be very quick to do so. 
+One query parameter it supports is `?limit=number` so that you can 
+generate specific number of entries at a time, and it will be very quick to do so. 
 The default is set to 10.
 
 Example with Limit: `http://localhost:3000/api/studies?limit=1000`
@@ -92,7 +92,7 @@ randomly.
 
 ## Contributions Are Welcome
 
-* For minor stuff or you are not a code but have ideas please file the request in the Git Issues.
+* For minor stuff or you are not a developer but have ideas please file the request in the Git Issues.
 
 * Please stick with Mithril.js + webpack.
 
