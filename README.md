@@ -14,6 +14,15 @@ to make them configurable.
 
 ## What It Does
 
+List View of the Worklist Generated
+
+![Screen 1](scerenshots/2019-04-08_13-23-57.png)
+
+
+JSON View of the Worklist Generated
+
+![Screen 2](scerenshots/2019-04-08_13-24-14 2.png)
+
 It auto-generates somewhat realistic Modality Worklist entries for testing the workflow. We often need
 to test this from the MWL all the way to acquisition in our mobile photo app ZenSnapMD.com
 
