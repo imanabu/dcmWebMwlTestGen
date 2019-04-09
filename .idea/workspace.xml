@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9aea232-b343-4cd1-b28f-c46c611347c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scerenshots/2019-04-08_13-23-57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scerenshots/2019-04-08_13-24-14 2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -65,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="459">
-                <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <first_editor relative-caret-position="1753">
+                <caret line="118" column="78" selection-start-line="118" selection-start-column="78" selection-end-line="118" selection-end-column="78" />
               </first_editor>
               <second_editor />
             </state>
@@ -76,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/mwlEntryGenerator.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2354">
+            <state relative-caret-position="22">
               <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
               <folding>
                 <element signature="n#_#0" expanded="true" />
@@ -394,7 +392,9 @@
       <workItem from="1554639411329" duration="17532000" />
       <workItem from="1554675117057" duration="11193000" />
       <workItem from="1554742378897" duration="242000" />
-      <workItem from="1554755070898" duration="517000" />
+      <workItem from="1554755070898" duration="1123000" />
+      <workItem from="1554756884045" duration="48000" />
+      <workItem from="1554771664422" duration="760000" />
     </task>
     <task id="LOCAL-00001" summary="Express Scaffold Build with TypeScript">
       <created>1554610438379</created>
@@ -431,7 +431,28 @@
       <option name="project" value="LOCAL" />
       <updated>1554686404843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add screen captures in README.MD">
+      <created>1554755603141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554755603141</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix the second screen capture file name (no space allowed).">
+      <created>1554755727886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554755727886</updated>
+    </task>
+    <task id="LOCAL-00008" summary="A bit more README improvements.">
+      <created>1554756304202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554756304202</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -467,13 +488,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35306000" />
+    <option name="totallyTimeSpent" value="36720000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="158" y="23" width="2141" height="1577" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1896141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19294903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -568,7 +589,10 @@
     <MESSAGE value="/api/studies now delivers the worklist. Limit query works." />
     <MESSAGE value="All the basic stuff we need is now coded." />
     <MESSAGE value=" Document updated." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Document updated." />
+    <MESSAGE value="Add screen captures in README.MD" />
+    <MESSAGE value="Fix the second screen capture file name (no space allowed)." />
+    <MESSAGE value="A bit more README improvements." />
+    <option name="LAST_COMMIT_MESSAGE" value="A bit more README improvements." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/@types/express-serve-static-core/index.d.ts">
@@ -730,6 +754,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scerenshots/2019-04-08_13-23-57.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -764,9 +791,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/mwlEntryGenerator.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2354">
+        <state relative-caret-position="22">
           <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
           <folding>
             <element signature="n#_#0" expanded="true" />
@@ -774,17 +804,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scerenshots/2019-04-08_13-23-57.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="459">
-            <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <first_editor relative-caret-position="1753">
+            <caret line="118" column="78" selection-start-line="118" selection-start-column="78" selection-end-line="118" selection-end-column="78" />
           </first_editor>
           <second_editor />
         </state>
