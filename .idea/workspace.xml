@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9aea232-b343-4cd1-b28f-c46c611347c5" name="Default Changelist" comment="" />
+    <list default="true" id="a9aea232-b343-4cd1-b28f-c46c611347c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/routes/api.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -38,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/Main.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="36" column="23" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="23" />
+            <state relative-caret-position="792">
+              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
               <folding>
                 <element signature="n#m#0" expanded="true" />
               </folding>
@@ -50,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+            <state relative-caret-position="1232">
+              <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -60,8 +62,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="2024">
-                <caret line="92" column="62" selection-start-line="92" selection-start-column="62" selection-end-line="92" selection-end-column="62" />
+              <first_editor relative-caret-position="132">
+                <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -71,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/mwlEntryGenerator.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="107" column="40" lean-forward="true" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+            <state relative-caret-position="22">
+              <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
               <folding>
                 <element signature="n#_#0" expanded="true" />
               </folding>
@@ -118,6 +120,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -156,9 +163,9 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="833" />
+    <option name="x" value="158" />
     <option name="y" value="23" />
-    <option name="width" value="1780" />
+    <option name="width" value="2141" />
     <option name="height" value="1577" />
   </component>
   <component name="ProjectView">
@@ -166,7 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,6 +205,11 @@
             <path>
               <item name="dcmWebMwlTestGen" type="b2602c69:ProjectViewProjectNode" />
               <item name="dcmWebMwlTestGen" type="462c0819:PsiDirectoryNode" />
+              <item name="scerenshots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dcmWebMwlTestGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dcmWebMwlTestGen" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -206,11 +218,16 @@
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="mwlEntryGenerator.ts" type="620a8d5e:NestingTreeNode" />
             </path>
+            <path>
+              <item name="dcmWebMwlTestGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dcmWebMwlTestGen" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,17 +245,18 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/services" />
-      <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/public/js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public/css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scerenshots" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/services" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/public/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,7 +271,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.WWW">
+  <component name="RunManager" selected="Mocha.test/200-Mwl.spec.ts">
     <configuration name="WWW" type="NodeJSConfigurationType" node-parameters="./bin/www" working-dir="$PROJECT_DIR$">
       <method v="2">
         <option name="NpmBeforeRunTask" enabled="true">
@@ -279,21 +297,6 @@
       <test-file>$PROJECT_DIR$/test/200-Mwl.spec.ts</test-file>
       <test-names>
         <name value="MWL Generator Test" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Patient Generator" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/100.services.spec.ts</test-file>
-      <test-names>
-        <name value="Patient Generator" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -336,21 +339,36 @@
       <test-file>$PROJECT_DIR$/test/200-Mwl.spec.ts</test-file>
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="dcmWebMwlTestGen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Mocha.MWL Generator Test" />
-      <item itemvalue="Mocha.Patient Generator" />
       <item itemvalue="Mocha.test/100.services.spec.ts" />
       <item itemvalue="Mocha.test/200-Mwl.spec.ts" />
       <item itemvalue="Mocha.Utils and Generator Functions" />
       <item itemvalue="Node.js.WWW" />
+      <item itemvalue="Python tests.Unittests in test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Mocha.test/200-Mwl.spec.ts" />
         <item itemvalue="Mocha.test/100.services.spec.ts" />
+        <item itemvalue="Python tests.Unittests in test" />
         <item itemvalue="Mocha.MWL Generator Test" />
         <item itemvalue="Mocha.Utils and Generator Functions" />
-        <item itemvalue="Mocha.Patient Generator" />
       </list>
     </recent_temporary>
   </component>
@@ -377,6 +395,10 @@
       <workItem from="1554610616977" duration="843000" />
       <workItem from="1554639411329" duration="17532000" />
       <workItem from="1554675117057" duration="11193000" />
+      <workItem from="1554742378897" duration="242000" />
+      <workItem from="1554755070898" duration="1123000" />
+      <workItem from="1554756884045" duration="48000" />
+      <workItem from="1554771664422" duration="1018000" />
     </task>
     <task id="LOCAL-00001" summary="Express Scaffold Build with TypeScript">
       <created>1554610438379</created>
@@ -413,16 +435,45 @@
       <option name="project" value="LOCAL" />
       <updated>1554686404843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add screen captures in README.MD">
+      <created>1554755603141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554755603141</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix the second screen capture file name (no space allowed).">
+      <created>1554755727886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554755727886</updated>
+    </task>
+    <task id="LOCAL-00008" summary="A bit more README improvements.">
+      <created>1554756304202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554756304202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="A bit more README improvements. Move to 0.0.2">
+      <created>1554772449223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554772449223</updated>
+    </task>
+    <task id="LOCAL-00010" summary="A bit more README improvements. Move to 0.0.2">
+      <created>1554772552760</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554772552760</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Patient_Generator - 2019.04.07 at 08h 08m 44s.xml">
-      <configuration name="Patient Generator" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Utils_and_Generator_Functions - 2019.04.07 at 08h 08m 55s.xml">
-      <configuration name="Utils and Generator Functions" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Utils_and_Generator_Functions - 2019.04.07 at 08h 12m 27s.xml">
       <configuration name="Utils and Generator Functions" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -447,14 +498,20 @@
     <history-entry file="test_200-Mwl_spec_ts - 2019.04.07 at 08h 55m 57s.xml">
       <configuration name="test/200-Mwl.spec.ts" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="test_100_services_spec_ts - 2019.04.08 at 18h 17m 44s.xml">
+      <configuration name="test/100.services.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="test_200-Mwl_spec_ts - 2019.04.08 at 18h 17m 51s.xml">
+      <configuration name="test/200-Mwl.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34547000" />
+    <option name="totallyTimeSpent" value="36978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="833" y="23" width="1780" height="1577" extended-state="0" />
+    <frame x="158" y="23" width="2141" height="1577" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22899885" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19294903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -549,7 +606,11 @@
     <MESSAGE value="/api/studies now delivers the worklist. Limit query works." />
     <MESSAGE value="All the basic stuff we need is now coded." />
     <MESSAGE value=" Document updated." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Document updated." />
+    <MESSAGE value="Add screen captures in README.MD" />
+    <MESSAGE value="Fix the second screen capture file name (no space allowed)." />
+    <MESSAGE value="A bit more README improvements." />
+    <MESSAGE value="A bit more README improvements. Move to 0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="A bit more README improvements. Move to 0.0.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/@types/express-serve-static-core/index.d.ts">
@@ -690,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interfaces.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -711,9 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -721,20 +772,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scerenshots/2019-04-08_13-23-57.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interfaces.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/Main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="23" />
+        <state relative-caret-position="792">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
           <folding>
             <element signature="n#m#0" expanded="true" />
           </folding>
@@ -743,15 +804,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        <state relative-caret-position="1232">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/mwlEntryGenerator.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="107" column="40" lean-forward="true" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+        <state relative-caret-position="22">
+          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
           <folding>
             <element signature="n#_#0" expanded="true" />
           </folding>
@@ -761,8 +825,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2024">
-            <caret line="92" column="62" selection-start-line="92" selection-start-column="62" selection-end-line="92" selection-end-column="62" />
+          <first_editor relative-caret-position="132">
+            <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
