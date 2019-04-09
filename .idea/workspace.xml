@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a9aea232-b343-4cd1-b28f-c46c611347c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +62,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1753">
-                <caret line="118" column="78" selection-start-line="118" selection-start-column="78" selection-end-line="118" selection-end-column="78" />
+              <first_editor relative-caret-position="132">
+                <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
               </first_editor>
               <second_editor />
             </state>
@@ -219,6 +218,11 @@
               <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="mwlEntryGenerator.ts" type="620a8d5e:NestingTreeNode" />
             </path>
+            <path>
+              <item name="dcmWebMwlTestGen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dcmWebMwlTestGen" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -267,7 +271,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.WWW">
+  <component name="RunManager" selected="Mocha.test/200-Mwl.spec.ts">
     <configuration name="WWW" type="NodeJSConfigurationType" node-parameters="./bin/www" working-dir="$PROJECT_DIR$">
       <method v="2">
         <option name="NpmBeforeRunTask" enabled="true">
@@ -293,21 +297,6 @@
       <test-file>$PROJECT_DIR$/test/200-Mwl.spec.ts</test-file>
       <test-names>
         <name value="MWL Generator Test" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Patient Generator" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/100.services.spec.ts</test-file>
-      <test-names>
-        <name value="Patient Generator" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -350,21 +339,36 @@
       <test-file>$PROJECT_DIR$/test/200-Mwl.spec.ts</test-file>
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="dcmWebMwlTestGen" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Mocha.MWL Generator Test" />
-      <item itemvalue="Mocha.Patient Generator" />
       <item itemvalue="Mocha.test/100.services.spec.ts" />
       <item itemvalue="Mocha.test/200-Mwl.spec.ts" />
       <item itemvalue="Mocha.Utils and Generator Functions" />
       <item itemvalue="Node.js.WWW" />
+      <item itemvalue="Python tests.Unittests in test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Mocha.test/200-Mwl.spec.ts" />
         <item itemvalue="Mocha.test/100.services.spec.ts" />
+        <item itemvalue="Python tests.Unittests in test" />
         <item itemvalue="Mocha.MWL Generator Test" />
         <item itemvalue="Mocha.Utils and Generator Functions" />
-        <item itemvalue="Mocha.Patient Generator" />
       </list>
     </recent_temporary>
   </component>
@@ -394,7 +398,7 @@
       <workItem from="1554742378897" duration="242000" />
       <workItem from="1554755070898" duration="1123000" />
       <workItem from="1554756884045" duration="48000" />
-      <workItem from="1554771664422" duration="760000" />
+      <workItem from="1554771664422" duration="1018000" />
     </task>
     <task id="LOCAL-00001" summary="Express Scaffold Build with TypeScript">
       <created>1554610438379</created>
@@ -452,16 +456,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554756304202</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="A bit more README improvements. Move to 0.0.2">
+      <created>1554772449223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554772449223</updated>
+    </task>
+    <task id="LOCAL-00010" summary="A bit more README improvements. Move to 0.0.2">
+      <created>1554772552760</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554772552760</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Patient_Generator - 2019.04.07 at 08h 08m 44s.xml">
-      <configuration name="Patient Generator" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Utils_and_Generator_Functions - 2019.04.07 at 08h 08m 55s.xml">
-      <configuration name="Utils and Generator Functions" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Utils_and_Generator_Functions - 2019.04.07 at 08h 12m 27s.xml">
       <configuration name="Utils and Generator Functions" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -486,15 +498,20 @@
     <history-entry file="test_200-Mwl_spec_ts - 2019.04.07 at 08h 55m 57s.xml">
       <configuration name="test/200-Mwl.spec.ts" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="test_100_services_spec_ts - 2019.04.08 at 18h 17m 44s.xml">
+      <configuration name="test/100.services.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="test_200-Mwl_spec_ts - 2019.04.08 at 18h 17m 51s.xml">
+      <configuration name="test/200-Mwl.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36720000" />
+    <option name="totallyTimeSpent" value="36978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="158" y="23" width="2141" height="1577" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19294903" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19294903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -592,7 +609,8 @@
     <MESSAGE value="Add screen captures in README.MD" />
     <MESSAGE value="Fix the second screen capture file name (no space allowed)." />
     <MESSAGE value="A bit more README improvements." />
-    <option name="LAST_COMMIT_MESSAGE" value="A bit more README improvements." />
+    <MESSAGE value="A bit more README improvements. Move to 0.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="A bit more README improvements. Move to 0.0.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/@types/express-serve-static-core/index.d.ts">
@@ -807,8 +825,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1753">
-            <caret line="118" column="78" selection-start-line="118" selection-start-column="78" selection-end-line="118" selection-end-column="78" />
+          <first_editor relative-caret-position="132">
+            <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
