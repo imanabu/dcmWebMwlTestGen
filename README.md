@@ -6,19 +6,21 @@ Manabu Tokunaga, GitHub: imanabu
 Version 0.0.3
 Release Date: 20190413
 
-## Fixed In This Relase
+## Fixed In This Release
 
-Build and run comfortably on Windows 
+Build and run comfortably on Windows.
+Updated the package.json for security.
 
 ## Introduction
 
-Note this is still very bare bone but I plan to add more functionality as we build more 
-complex tests. Please provide your ideas in the Git Issues.
+Note this is still very bare bone but it can do everything I need in our product tests.
+Hopefully you can either use this "as is" or extend it for your specific uses. The
+most difficult parts are done. So you can easily take this from where you would want to go.
 
-This is a simple Node/Express app to generate a bunch of visits with hospital departments 
-associated, and serve them up via the DICOM QIDO /studies API. Because I do need to map the 
-departments with real existing ones at the hospital, you can also configure realistic 
-clinical departament configurations as well. 
+This is a simple Node/Express app to generate a bunch of visits with hospital departments
+associated, and serve them up via the DICOM QIDO /studies API. Because I do need to map the
+departments with real existing ones at the hospital, you can also configure realistic
+clinical department configurations as well.
 
 ## What It Does
 
@@ -29,8 +31,8 @@ As such you can also use this to generate visits to feed the rest of your test w
 
 Among the things this generates are;
 
-* Realistic people names, correct with genders. Patient, Referring and Performing doctor names are
-  generated along with fairly unique MRN, Accession and truly unique Study and Instance UIDs.
+* Realistic people names, correct with genders. Patient, Referring and Performing doctor names   are generated along with fairly unique MRN, Accession and truly unique Study and Instance      UIDs.
+  
   Names are synthesized by combining the list of names from a recent US Census data, so
   even how the names sound are fairly modern.
   
@@ -86,8 +88,8 @@ We really do not need any fancy QIDO query param stuff here. So no date range qu
 element level query is supported. (You are welcome to add those things. Just fork it.)
 Go ahead and specify them but they will be ignored.
 
-Only exception to that is that it supports `?limit=number` so that you can 
-pull 100's and 1000's of entries at a time, and it will be very quick to do so. 
+Only exception to that is that it supports `?limit=number` so that you can
+pull 100's and 1000's of entries at a time, and it will be very quick to do so.
 In this case the limit is used as a requested number of entry you'd want to generate.
 
 The default is hardwired to 10.
@@ -113,7 +115,7 @@ randomly.
           ]
        },...
     ]
-       
+
 * active: Means this entry will be used. 
 * department: It can be a code or a string like ER/ED. It maps to (0008,1040)
 * modalities: The modalities the department uses or requests.
@@ -133,4 +135,4 @@ This is also an example of writing an HTML client program.
 
 * Please stick with Mithril.js + webpack.
 
-* Let's keep this to work only with npm and no other build tools. 
+* Let's keep this to work only with npm and no other build tools.
