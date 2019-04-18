@@ -12,7 +12,8 @@ var Main = /** @class */ (function () {
         this.rawMwl = [];
         this.mode = "mwl";
         this.listMode = true;
-        this.limit = 10;
+        this.limit = 0;
+        this.usedUrl = "";
         this.mwl = "";
         this.departments = "";
     }
@@ -22,11 +23,12 @@ var Main = /** @class */ (function () {
         var h = m("h2", {}, "ZenSnapMD MWL Test Suite");
         var dp = m("pre", my.departments);
         var help = my.mode === "mwl" ?
-            m(".col.head-room", "Used QIDO API URL: http://localhost:3000/api/studies?limit=" + my.limit) :
+            m(".col.head-room", "Used QIDO API URL: " + my.usedUrl) :
             m(".col.head-room", "To change this, Edit Config.ts file, rebuild and run.");
         var limitLabel = m("label[for=limit]", "Limit: ");
         var limit = m("input[id=limit][type=text][style=margin-left:10px]", {
             onchange: m.withAttr("value", function (v) { my.limit = parseInt(v, 10); }),
+            placeholder: "10",
             value: my.limit,
         });
         var limitCell = m(".col", [limitLabel, limit]);
@@ -81,7 +83,9 @@ var Main = /** @class */ (function () {
     Main.prototype.getMwl = function () {
         var my = this;
         my.mode = "mwl";
-        var url = "api/studies?limit=" + my.limit;
+        var url = my.limit ? "api/studies?limit=" + my.limit :
+            "api/studies";
+        my.usedUrl = url;
         var options = {};
         options.method = "GET";
         return m.request(url, options).then(function (data) {

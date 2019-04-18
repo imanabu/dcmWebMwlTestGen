@@ -9,7 +9,8 @@
     "build": "tsc && npm run client-build",
     "client-build": "cd client && tsc && webpack",
     "test": "tsc && node ./node_modules/mocha/bin/mocha -exit -r ts-node/register test/**/*.spec.ts",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "go": "npm run build && npm start"
   },
   "author": "Manabu Tokunaga, WinguMD, Inc.",
   "license": "ISC",

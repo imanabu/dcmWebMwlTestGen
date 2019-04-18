@@ -1,7 +1,7 @@
 import _ = require("lodash/fp");
 import {Utils} from "./Utils";
 import {PersonGenerator} from "./PersonGenerator";
-import {departments} from "../Confg";
+import config = require("../config/appConfig");
 import {IDepartment} from "../interfaces";
 
 export class MwlEntryGenerator {
@@ -32,8 +32,6 @@ export class MwlEntryGenerator {
     public sopInstanceUid: string | null = null;
     public studyDescription = "";
     public studyUid: string | null = null;
-
-    public readonly modalities = ["CT", "MR", "DX", "PET", "US", "XA"];
 
     constructor(private patientGenerator: PersonGenerator | null = null) {
         if (!patientGenerator) {
@@ -67,7 +65,7 @@ export class MwlEntryGenerator {
         const referringName = my.referringPhysiciansName || referring.name;
         const attendingName = my.scheduledProcedureStepAttendingName || attending.name;
 
-        const activeDepartments = _.filter<IDepartment>(x => x.active)(departments);
+        const activeDepartments = _.filter<IDepartment>(x => x.active)(config.departments);
         const oneDept: IDepartment = draw(activeDepartments);
         const modality = my.modality || draw(oneDept.modalities);
 

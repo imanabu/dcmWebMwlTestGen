@@ -3,13 +3,26 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.3
+Version 0.0.4
 Release Date: 20190413
+
+## New Features and Changes
+
+* The configuration is now a plain json and stored in config/appConfig.js
+* The default max limit and also hourly new patient addition values are in this file.
+* New `?houlry=number` URL parameter can also use to specify the hourly patient addition rate.
+  New patients will be added and the same number of existing ones will fall off the list.
+  This will emulate clinics completing exams.
+  New generation is computed on an hourly rate basis from the last generation. 
+  
+* URL `limit` and `hourly` parameters will persist for the duration of server's lifecycle.
+  If the server restarts, these numbers will be reset.
+  The intention here is that you can alter the configuration while running from a web browser
+  by just firing a query with the these parameters only once.
 
 ## Fixed In This Release
 
-Build and run comfortably on Windows.
-Updated the package.json for security.
+No bugs
 
 ## Introduction
 

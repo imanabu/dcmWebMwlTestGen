@@ -11,6 +11,7 @@ mocha_1.describe("MWL Generator Test", () => {
         const mwl = new mwlEntryGenerator_1.MwlEntryGenerator();
         mocha_1.it("Can generate without any data", () => {
             const entry = mwl.generateJson();
+            // console.debug(JSON.stringify(entry, null, 3));
             assert_1.default(entry);
             // console.debug(`${JSON.stringify(entry, null, 3)}`)
         });
