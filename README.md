@@ -16,7 +16,7 @@ Release Date: 20190413
   New generation is computed on an hourly rate basis from the last generation. 
   
 * URL `limit` and `hourly` parameters will persist for the duration of server's lifecycle.
-  If the server restarts, these numbers will be reset.
+  If the server restarts, these numbers will be reset and will be from the values in config/appConfig.js
   The intention here is that you can alter the configuration while running from a web browser
   by just firing a query with the these parameters only once.
 
