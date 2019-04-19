@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _ = require("lodash/fp");
 const Utils_1 = require("./Utils");
 const PersonGenerator_1 = require("./PersonGenerator");
-const Confg_1 = require("../Confg");
+const config = require("../config/appConfig");
 class MwlEntryGenerator {
     constructor(patientGenerator = null) {
         this.patientGenerator = patientGenerator;
@@ -31,7 +31,6 @@ class MwlEntryGenerator {
         this.sopInstanceUid = null;
         this.studyDescription = "";
         this.studyUid = null;
-        this.modalities = ["CT", "MR", "DX", "PET", "US", "XA"];
         if (!patientGenerator) {
             this.patientGenerator = new PersonGenerator_1.PersonGenerator();
         }
@@ -57,7 +56,7 @@ class MwlEntryGenerator {
         const startTime = my.scheduledProcedureStepTime || Utils_1.Utils.formatTime(now);
         const referringName = my.referringPhysiciansName || referring.name;
         const attendingName = my.scheduledProcedureStepAttendingName || attending.name;
-        const activeDepartments = _.filter(x => x.active)(Confg_1.departments);
+        const activeDepartments = _.filter(x => x.active)(config.departments);
         const oneDept = draw(activeDepartments);
         const modality = my.modality || draw(oneDept.modalities);
         const description = my.studyDescription || draw(oneDept.reasons);

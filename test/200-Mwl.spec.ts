@@ -8,6 +8,7 @@ describe("MWL Generator Test", () => {
         const mwl = new MwlEntryGenerator();
         it("Can generate without any data", () => {
             const entry = mwl.generateJson();
+            // console.debug(JSON.stringify(entry, null, 3));
             assert(entry);
             // console.debug(`${JSON.stringify(entry, null, 3)}`)
         });

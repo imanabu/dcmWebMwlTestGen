@@ -14,7 +14,8 @@ export class Main implements m.ClassComponent {
     private mode = "mwl";
     private listMode = true;
     private departments: string;
-    private limit = 10;
+    private limit = 0;
+    private usedUrl = "";
 
     constructor() {
         this.mwl = "";
@@ -29,13 +30,14 @@ export class Main implements m.ClassComponent {
         const dp = m(`pre`, my.departments);
 
         const help = my.mode === "mwl" ?
-            m(".col.head-room", `Used QIDO API URL: http://localhost:3000/api/studies?limit=${my.limit}`) :
+            m(".col.head-room", `Used QIDO API URL: ${my.usedUrl}`) :
             m(".col.head-room", `To change this, Edit Config.ts file, rebuild and run.`);
 
         const limitLabel = m("label[for=limit]", "Limit: ");
         const limit = m("input[id=limit][type=text][style=margin-left:10px]",
             {
                 onchange: m.withAttr("value", (v) => { my.limit = parseInt(v, 10);}),
+                placeholder: "10",
                 value: my.limit,
             });
         const limitCell = m(".col", [limitLabel, limit]);
@@ -115,7 +117,11 @@ export class Main implements m.ClassComponent {
     private getMwl() {
         const my = this;
         my.mode = "mwl";
-        const url = `api/studies?limit=${my.limit}`;
+        const url = my.limit ? `api/studies?limit=${my.limit}` :
+            `api/studies`
+        ;
+
+        my.usedUrl = url;
 
         const options = {} as m.RequestOptions<any>;
         options.method = "GET";
