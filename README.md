@@ -9,16 +9,21 @@ Release Date: 20190413
 ## New Features and Changes
 
 * The configuration is now a plain json and stored in config/appConfig.js
-* The default max limit and also hourly new patient addition values are in this file.
+* More realistic generation of encounters now. Repeated default /api/studies will only provide
+  list changes as specified in the configuration. So for example, if you set up 12 encounter per hour,
+  only 12 new patients will be ordered in that hour. And the queue will automatically remove the
+  people to maintain the size as specified by the `defaultMax`.
+  
 * New `?houlry=number` URL parameter can also use to specify the hourly patient addition rate.
   New patients will be added and the same number of existing ones will fall off the list.
   This will emulate clinics completing exams.
   New generation is computed on an hourly rate basis from the last generation. 
   
-* URL `limit` and `hourly` parameters will persist for the duration of server's lifecycle.
-  If the server restarts, these numbers will be reset and will be from the values in config/appConfig.js
-  The intention here is that you can alter the configuration while running from a web browser
-  by just firing a query with the these parameters only once.
+* URL `limit` and `hourly` parameters will persist for the duration of the server's lifecycle.
+  Once the `limit` or `hourly` in a query is used that value will persist and will be used
+  for next request even without the limit and hourly parameter.
+  
+  By default the configuration is set to 96 encounters for 8 hours or 12 new encounters per hour.
 
 ## Fixed In This Release
 
@@ -26,14 +31,21 @@ No bugs
 
 ## Introduction
 
-Note this is still very bare bone but it can do everything I need in our product tests.
-Hopefully you can either use this "as is" or extend it for your specific uses. The
-most difficult parts are done. So you can easily take this from where you would want to go.
+When you are testing or a demo-ing a PACS or a modality, we often need to start from a Modality Worklist 
+and I always needed some ways of automatically generating them and I also want them to look somewhat
+real and gender correct in terms of how the names are presented.
 
-This is a simple Node/Express app to generate a bunch of visits with hospital departments
+So I wrote a Node/Express app to generate a bunch of visits with hospital departments
 associated, and serve them up via the DICOM QIDO /studies API. Because I do need to map the
 departments with real existing ones at the hospital, you can also configure realistic
 clinical department configurations as well.
+
+I am keeping this as simple as possible without a asking you to configure Java or MogoDB or MySQL. I think
+this will just work if you have ever worked with Node.js with npm without you needing to fuss about
+configurations. All the defaults should be adequate to get you started. The only thing you may not have
+done is to code the stuff in TypeScript. I like it. It removes my own coding hassles. But TS now
+very popular with React and Angular 2 camps so you are likely exposed to it.
+
 
 ## What It Does
 
@@ -44,7 +56,8 @@ As such you can also use this to generate visits to feed the rest of your test w
 
 Among the things this generates are;
 
-* Realistic people names, correct with genders. Patient, Referring and Performing doctor names   are generated along with fairly unique MRN, Accession and truly unique Study and Instance      UIDs.
+* Realistic people names, correct with genders. Patient, Referring and Performing doctor names
+are generated along with fairly unique MRN, Accession and truly unique Study and Instance UIDs.
   
   Names are synthesized by combining the list of names from a recent US Census data, so
   even how the names sound are fairly modern.

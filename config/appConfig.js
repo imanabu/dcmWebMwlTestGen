@@ -1,9 +1,9 @@
 const appConfig = {
 
     generator: {
-        // 24 makes 100 case a day hospital.
-        hourlyPatients: 24,
-        defaultMax: 24
+        // 12 makes about 100 case a day hospital.
+        hourlyPatients: 12,
+        defaultMax: 20
     },
 
     departments: [
