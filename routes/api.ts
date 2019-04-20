@@ -17,7 +17,7 @@ router.get("/studies", (req: Request, res: Response, next: NextFunction) => {
     const currentTime = Date.now();
     const elapsedHours = (currentTime - lastGeneratedAt)/(1000*60*60);
 
-    const defaultMode = !req.query.limit ? true : false;
+    const defaultMode = !req.query.limit;
 
     let limit: number = req.query.limit ? parseInt(req.query.limit, 10) :
         config.generator.defaultMax;
@@ -40,7 +40,7 @@ router.get("/studies", (req: Request, res: Response, next: NextFunction) => {
             list.push(gen.generateJson());
         }
         lastGeneratedAt = currentTime;
-    } else if (limit){
+    } else if (limit && !defaultMode){
         if (config.persistConfig) {
             config.generator.defaultMax = limit;
         }
