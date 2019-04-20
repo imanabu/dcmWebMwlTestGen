@@ -1,6 +1,7 @@
-import {Application, NextFunction, Request, Response} from "express";
-const createError: any = require("http-errors");
+import {Application} from "express";
+import config = require("./config/appConfig");
 import express = require("express");
+import slowDown = require("express-slow-down");
 import path = require("path");
 const cookieParser: any = require("cookie-parser");
 const lessMiddleware: any = require("less-middleware");
@@ -11,6 +12,10 @@ const indexRouter: Application = require("./routes");
 
 const app = express();
 
+const speedLimiter = slowDown(config.speedLimit);
+
+app.enable("trust proxy");
+app.use(speedLimiter);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

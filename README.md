@@ -3,8 +3,8 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.4
-Release Date: 20190413
+Version 0.0.5
+Release Date: 20190420
 
 ## New Features and Changes
 
@@ -21,9 +21,11 @@ Release Date: 20190413
   
 * URL `limit` and `hourly` parameters will persist for the duration of the server's lifecycle.
   Once the `limit` or `hourly` in a query is used that value will persist and will be used
-  for next request even without the limit and hourly parameter.
+  for next request even without the limit and hourly parameter *if* `persistConfig` is true.
   
   By default the configuration is set to 96 encounters for 8 hours or 12 new encounters per hour.
+  
+* In preparation for public access, rate and quantity limit is now enforceable and configurable.
 
 ## Fixed In This Release
 
@@ -40,11 +42,7 @@ associated, and serve them up via the DICOM QIDO /studies API. Because I do need
 departments with real existing ones at the hospital, you can also configure realistic
 clinical department configurations as well.
 
-I am keeping this as simple as possible without a asking you to configure Java or MogoDB or MySQL. I think
-this will just work if you have ever worked with Node.js with npm without you needing to fuss about
-configurations. All the defaults should be adequate to get you started. The only thing you may not have
-done is to code the stuff in TypeScript. I like it. It removes my own coding hassles. But TS now
-very popular with React and Angular 2 camps so you are likely exposed to it.
+I am keeping this as simple as possible without a asking you to configure Java or MongoDB or MySQL.
 
 
 ## What It Does
@@ -110,17 +108,16 @@ And by default it should be listening at the Port 3000 of your local system.
 
 `http://localhost:3000/api/studies`
 
-We really do not need any fancy QIDO query param stuff here. So no date range query nor 
+At this point no date range query nor 
 element level query is supported. (You are welcome to add those things. Just fork it.)
 Go ahead and specify them but they will be ignored.
 
-Only exception to that is that it supports `?limit=number` so that you can
-pull 100's and 1000's of entries at a time, and it will be very quick to do so.
-In this case the limit is used as a requested number of entry you'd want to generate.
+Only exception to that is that it supports `?limit=number` can be used to request the generation quantity.
+This is limited to 250 by configuration, but can be changed. 1000s of entries can be generated quickly.
 
 The default is hardwired to 10.
 
-Example with Limit: `http://localhost:3000/api/studies?limit=1000`
+Example with Limit: `http://localhost:3000/api/studies?limit=200`
 
 ## Configuring Departments and Associated Reasons for Study
 
