@@ -4,7 +4,7 @@ const appConfig = {
         // 12 makes about 100 case a day hospital.
         absoluteMax: 250,
         defaultMax: 20,
-        hourlyPatients: 5000,
+        hourlyPatients: 12,
         persistConfig: false,
     },
 
