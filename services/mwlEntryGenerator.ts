@@ -3,6 +3,7 @@ import {Utils} from "./Utils";
 import {PersonGenerator} from "./PersonGenerator";
 import config = require("../config/appConfig");
 import {IDepartment} from "../interfaces";
+import {INewStudy} from "../model/dtos";
 
 export class MwlEntryGenerator {
 
@@ -39,37 +40,57 @@ export class MwlEntryGenerator {
         }
     }
 
-    public generateJson(): any {
+    public generateJson(custom?: INewStudy): any {
         const my = this;
 
         const draw = <T>(items: T[]): T => {
             return items[Math.floor(Math.random() * items.length)];
         };
 
-        const patient = my.patientGenerator!.generate();
+        const now = new Date();
+        const activeDepartments = _.filter<IDepartment>(x => x.active)(config.departments);
+
+        const oneDept: IDepartment = draw(activeDepartments);
+        let patient = my.patientGenerator!.generate();
+        let accession = my.accession || Utils.generateRandomId(8);
+        let modality = my.modality || draw(oneDept.modalities);
+        let studyUid = my.studyUid || Utils.generateUid();
+
+        let startDate = my.scheduledProcedureStepDate || Utils.formatDate(now);
+        let startTime = my.scheduledProcedureStepTime || Utils.formatTime(now);
+        let description = my.studyDescription || draw(oneDept.reasons);
+
+
+        if (custom) {
+            patient.name = custom.patientName ? custom.patientName : patient.name;
+            patient.mrn = custom.mrn ? custom.mrn : patient.mrn;
+            patient.dob = custom.dob ? custom.dob : patient.dob;
+            patient.gender = custom.gender ? custom.gender : patient.gender;
+            modality = custom.modality ? custom.modality : modality;
+            accession = custom.accession ? custom.accession : accession;
+            studyUid = custom.studyUid ? custom.studyUid : studyUid;
+            description =  custom.reason ? custom.reason : description;
+            if (custom.studyDate) {
+                startDate = Utils.formatDate(custom.studyDate);
+                startTime = Utils.formatTime(custom.studyDate);
+            }
+        }
+
         const attending = my.patientGenerator!.generate("MD");
         const referring = my.patientGenerator!.generate("MD");
 
         const sopInstanceUid = my.sopInstanceUid || Utils.generateUid();
-        const studyUid = my.studyUid || Utils.generateUid();
-        const accession = my.accession || Utils.generateRandomId(8);
+
         const patientName = my.patientName || patient.name;
 
         const patientId = my.patientId || patient.mrn;
         const dob = my.dateOfBirth || patient.dob;
         const dobStr = Utils.formatDate(dob);
         const sex = my.sex || patient.gender;
-        const now = new Date();
-        const startDate = my.scheduledProcedureStepDate || Utils.formatDate(now);
-        const startTime = my.scheduledProcedureStepTime || Utils.formatTime(now);
+
         const referringName = my.referringPhysiciansName || referring.name;
         const attendingName = my.scheduledProcedureStepAttendingName || attending.name;
 
-        const activeDepartments = _.filter<IDepartment>(x => x.active)(config.departments);
-        const oneDept: IDepartment = draw(activeDepartments);
-        const modality = my.modality || draw(oneDept.modalities);
-
-        const description = my.studyDescription || draw(oneDept.reasons);
         const theDepartment = my.department || oneDept.department;
 
         my.jsonEntry = {
@@ -289,7 +310,7 @@ export class MwlEntryGenerator {
                                     "00080104": {
                                         "vr": "LO",
                                         "Value": [
-                                            my.studyDescription
+                                            description
                                         ]
                                     }
                                 }
