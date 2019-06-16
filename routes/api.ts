@@ -1,18 +1,21 @@
-import _ from "lodash/fp";
-import {NextFunction, Request, Response} from "express";
-import express = require("express");
-import {MwlEntryGenerator} from "../services/mwlEntryGenerator";
 import config = require("../config/appConfig");
+import express = require("express");
+
+import _ from "lodash/fp";
+import {Request, Response} from "express";
+
+import {INewStudy, IApiResponse, INewStudyDto} from "../model/dtos";
+import {MwlEntryGenerator} from "../services/mwlEntryGenerator";
 
 const router = express.Router();
 
 let list: any[]= [];
 let lastGeneratedAt = Date.now();
 let previousLimit = 0;
+let manualList: INewStudy[] = [];
 
 /* GET home page. */
-// noinspection JSUnusedLocalSymbols
-router.get("/studies", (req: Request, res: Response, next: NextFunction) => {
+router.get("/studies", (req: Request, res: Response) => {
 
     const currentTime = Date.now();
     const elapsedHours = (currentTime - lastGeneratedAt)/(1000*60*60);
@@ -54,6 +57,14 @@ router.get("/studies", (req: Request, res: Response, next: NextFunction) => {
         }
     }
 
+    // Add on
+    if (manualList.length > 0) {
+        manualList.forEach((item) => {
+            list.push(gen.generateJson(item));
+        });
+        manualList = [];
+    }
+
     if (list.length > limit ) {
         // If the limit changes to less, reduce the size
         for (let j = 0; j < list.length - limit; j++) {
@@ -70,9 +81,31 @@ router.get("/studies", (req: Request, res: Response, next: NextFunction) => {
     res.status(200).json(result);
 });
 
-// noinspection JSUnusedLocalSymbols
-router.get("/departments", (req: Request, res: Response, next: NextFunction) => {
+router.get("/departments", (req: Request, res: Response) => {
     res.status(200).json(config.departments);
+});
+
+router.post("/study/add", (req: Request, res: Response) => {
+    try {
+        const study = req.body as INewStudyDto;
+        const reply = {} as IApiResponse<any>;
+        reply.code = 200;
+        reply.message = "Patient/study registered. Ready for a next generation request.";
+        const addStudy =  {} as INewStudy;
+        addStudy.accession = study.accession;
+        addStudy.studyDate = new Date(study.studyDate);
+        addStudy.dob = new Date(study.dob);
+        addStudy.gender = study.gender;
+        addStudy.mrn = study.mrn;
+        addStudy.modality = study.modality;
+        addStudy.reason = study.reason;
+        addStudy.patientName = study.patientName;
+        addStudy.studyUid = study.studyUid;
+        manualList.push(addStudy);
+        return res.status(200).json(reply);
+    } catch(err) {
+        return res.status(500).json(err);
+    }
 });
 
 

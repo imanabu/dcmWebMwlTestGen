@@ -3,10 +3,17 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.5
-Release Date: 20190420
+Version 0.0.6
+Release Date: 20190616
 
 ## New Features and Changes
+
+### 0.0.6
+
+* Manually add new patient-studies with your choice of information. 
+  Use this to create a correlated encounter already on the EHR/PACS.
+
+### 0.0.5
 
 * The configuration is now a plain json and stored in config/appConfig.js
 * More realistic generation of encounters now. Repeated default /api/studies will only provide
