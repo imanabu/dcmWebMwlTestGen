@@ -1,5 +1,7 @@
 import m = require("mithril");
 import _ = require("lodash/fp");
+import {Vnode} from "mithril";
+import {AddComponent} from "./AddComponent";
 
 /**
  * THE MAIN
@@ -9,10 +11,10 @@ const content = document.getElementById("content") as Element;
 
 export class Main implements m.ClassComponent {
 
+    private addComponent = new AddComponent();
     private mwl: string;
     private rawMwl: any[] = [];
-    private mode = "mwl";
-    private listMode = true;
+    private mode: "add" | "dept" | "mwl" | "raw"  = "mwl";
     private departments: string;
     private limit = 0;
     private usedUrl = "";
@@ -24,14 +26,10 @@ export class Main implements m.ClassComponent {
 
     public view() {
         const my = this;
-        const spacer = m("[style=margin-botton:10px;]", m.trust("&nbsp;"));
+        const spacer = m("[style=margin-bottom:10px;]", m.trust("&nbsp;"));
         const h = m(`h2`, {}, `ZenSnapMD MWL Test Suite`);
 
-        const dp = m(`pre`, my.departments);
-
-        const help = my.mode === "mwl" ?
-            m(".col.head-room", `Used QIDO API URL: ${my.usedUrl}`) :
-            m(".col.head-room", `To change this, Edit Config.ts file, rebuild and run.`);
+        let help = m("");
 
         const limitLabel = m("label[for=limit]", "Limit: ");
         const limit = m("input[id=limit][type=text][style=margin-left:10px]",
@@ -44,18 +42,27 @@ export class Main implements m.ClassComponent {
 
         const listButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: () => {
-                my.listMode = true;
-                my.getMwl.bind(my)(); },
+                my.mode = "mwl";
+                return my.getMwl(); },
         }, "Gen & Show List");
 
         const rawButton = m("button.brn-margin.col.btn-med.btn-info", {
             onclick: () => {
-                my.listMode = false;
-                my.getMwl.bind(my)(); },
+                my.mode = "raw";
+                return my.getMwl(); },
         }, "Gen & Show JSON");
 
+        const addButton = m("button.btn-margin.col.btn-med.btn-info", {
+            onclick: () => {
+                my.mode = "add";
+            },
+        }, "Add New");
+
         const deptButton = m("button.btn-margin.col.btn-med.btn-info", {
-            onclick: my.getDepartments.bind(my),
+            onclick: () => {
+                my.mode = "dept";
+                return my.getDepartments();
+            },
         }, "Show Departments");
 
         const ctrlRow = m(".row",
@@ -63,63 +70,79 @@ export class Main implements m.ClassComponent {
                 limitCell,
                 rawButton,
                 listButton,
+                addButton,
                 deptButton]);
 
-        const listHead = m(".row.list-header",
-            m(".col-1", "Date"),
-            // m(".col", item["00400100"].Value[0]["00400003"].Value[0]),
-            m(".col-2", "Patient Name"),
-            m(".col-1", "MRN"),
-            m(".col-1", "DOB"),
-            m(".col-1",  "Gender"),
-            m(".col-1", "Modality"),
-            m(".col-1", "Accession"),
-            m(".col-1", "Dept."),
-            m(".col-1", "Reason"),
-        )
+        let body: Vnode = m("");
 
-        const getList = _.map((item: any) => {
-            let name = item["00100010"].Value[0].Alphabetic;
-            let nameParts = name.split("^");
-            let finalName = "";
-            for (let i = 0; i < nameParts.length; i++) {
-                finalName = finalName + nameParts[i];
-                if (i === 0) {
-                    finalName = finalName + ", ";
-                } else {
-                    finalName = finalName + " ";
-                }
-            }
+        if (my.mode === "mwl") {
 
-            return m(".row",
-                m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]),
+            help = m(".col.head-room", `Used QIDO API URL: ${my.usedUrl}`);
+
+            const listHead = m(".row.list-header",
+                m(".col-1", "Date"),
                 // m(".col", item["00400100"].Value[0]["00400003"].Value[0]),
-                m(".col-2", finalName),
-                m(".col-1", item["00100020"].Value[0]),
-                m(".col-1", item["00100030"].Value[0]),
-                m(".col-1", item["00100040"].Value[0]),
-                m(".col-1", item["00400100"].Value[0]["00080060"].Value[0]),
-                m(".col-1", item["00080050"].Value[0]),
-                m(".col-1", item["00081040"].Value[0]),
-                m(".col-2", item["00081030"].Value[0]),
-            )
-        });
+                m(".col-2", "Patient Name"),
+                m(".col-1", "MRN"),
+                m(".col-1", "DOB"),
+                m(".col-1",  "Gender"),
+                m(".col-1", "Modality"),
+                m(".col-1", "Accession"),
+                m(".col-1", "Dept."),
+                m(".col-1", "Reason"),
+            );
 
-        const mw = my.listMode ? m("", listHead, getList(my.rawMwl)) : m(`pre`, my.mwl);
+            const getList = _.map((item: any) => {
+                let name = item["00100010"].Value[0].Alphabetic;
+                let nameParts = name.split("^");
+                let finalName = "";
+                for (let i = 0; i < nameParts.length; i++) {
+                    finalName = finalName + nameParts[i];
+                    if (i === 0) {
+                        finalName = finalName + ", ";
+                    } else {
+                        finalName = finalName + " ";
+                    }
+                }
+
+                return m(".row",
+                    m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]),
+                    // m(".col", item["00400100"].Value[0]["00400003"].Value[0]),
+                    m(".col-2", finalName),
+                    m(".col-1", item["00100020"].Value[0]),
+                    m(".col-1", item["00100030"].Value[0]),
+                    m(".col-1", item["00100040"].Value[0]),
+                    m(".col-1", item["00400100"].Value[0]["00080060"].Value[0]),
+                    m(".col-1", item["00080050"].Value[0]),
+                    m(".col-1", item["00081040"].Value[0]),
+                    m(".col-2", item["00081030"].Value[0]),
+                )
+            });
+
+            body = m("", listHead, getList(my.rawMwl));
+
+        } else if (my.mode === "raw") {
+            body =  m(`pre`, my.mwl);
+        } else if (my.mode === "add") {
+            help = m(".col.head-room", `Generate a specific patient on the next gen cycle.`);
+            body = m(my.addComponent);
+        } else if (my.mode === "dept") {
+            help = m(".col.head-room", `To change this, Edit Config.ts file, rebuild and run.`);
+            body = m(`pre`, my.departments);
+        }
 
         return m("", [h,
             ctrlRow,
             m(".row", help),
             spacer,
-            my.mode === "mwl" ? mw : dp]);
+            body]);
     }
 
-    private getMwl() {
+    private getMwl = () => {
         const my = this;
         my.mode = "mwl";
         const url = my.limit ? `api/studies?limit=${my.limit}` :
-            `api/studies`
-        ;
+            `api/studies`;
 
         my.usedUrl = url;
 
@@ -135,9 +158,9 @@ export class Main implements m.ClassComponent {
                 my.mwl = error.toString();
             }
         );
-    }
+    };
 
-    private getDepartments() {
+    private getDepartments = () => {
         const my = this;
         my.mode = "dept";
         const url = `api/departments`;
@@ -154,7 +177,7 @@ export class Main implements m.ClassComponent {
             }
         );
 
-    }
+    };
 }
 
 // Content DIV to insert the content into
