@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/Main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Main.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583553455487</updated>
-      <workItem from="1583553457727" duration="12381000" />
+      <workItem from="1583553457727" duration="12648000" />
     </task>
     <task id="LOCAL-00001" summary="Fix a lint issue.">
       <created>1583554006812</created>
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583600236585</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fix Raw display mode.">
+      <created>1583601515412</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583601515412</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +185,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix a lint issue." />
     <MESSAGE value="Prepare for 0.0.8 release" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepare for 0.0.8 release" />
+    <MESSAGE value="Fix Raw display mode." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Raw display mode." />
   </component>
   <component name="WindowStateProjectService">
     <state x="439" y="190" key="#Web_Browsers" timestamp="1583594839615">
@@ -191,10 +197,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583594919550" />
-    <state x="404" y="125" key="CommitChangelistDialog2" timestamp="1583600236489">
+    <state x="404" y="125" key="CommitChangelistDialog2" timestamp="1583601515253">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="404" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1583600236489" />
+    <state x="404" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1583601515253" />
     <state width="1638" height="287" key="GridCell.Tab.0.bottom" timestamp="1583601423563">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -271,10 +277,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="571" y="243" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583592027535" />
-    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583600239312">
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583601542903">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1583600239312" />
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1583601542903" />
     <state x="586" y="245" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583593021736">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
