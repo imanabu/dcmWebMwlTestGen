@@ -14,10 +14,9 @@ var Main = /** @class */ (function () {
         this.addComponent = new AddComponent_1.AddComponent();
         this.rawMwl = [];
         this.mode = "mwl";
-        this.limit = 0;
+        this.limit = 100;
         this.usedUrl = "";
-        this.getMwl = function () {
-            var my = _this;
+        this.getMwl = function (my) {
             my.mode = "mwl";
             var url = my.limit ? "api/studies?limit=" + my.limit :
                 "api/studies";
@@ -45,29 +44,34 @@ var Main = /** @class */ (function () {
         };
         this.mwl = "";
         this.departments = "";
+        console.log("Constructed");
     }
     Main.prototype.view = function () {
         var my = this;
         var spacer = m("[style=margin-bottom:10px;]", m.trust("&nbsp;"));
-        var h = m("h2", {}, "ZenSnapMD MWL Test Suite");
+        var h = m("", m("h2", {}, "ZenSnapMD MWL Test Suite"), m("a[href=https://github.com/imanabu/dcmWebMwlTestGen][target=_blank]", "Source on GitHub"));
         var help = m("");
         var limitLabel = m("label[for=limit]", "Limit: ");
         var limit = m("input[id=limit][type=text][style=margin-left:10px]", {
-            onchange: m.withAttr("value", function (v) { my.limit = parseInt(v, 10); }),
-            placeholder: "10",
+            onchange: function (e) {
+                var v = e.currentTarget.value;
+                my.limit = parseInt(v, 10);
+                console.log("Limit set to " + my.limit);
+            },
+            placeholder: "100",
             value: my.limit,
         });
         var limitCell = m(".col", [limitLabel, limit]);
         var listButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: function () {
                 my.mode = "mwl";
-                return my.getMwl();
+                return my.getMwl(my);
             },
         }, "Gen & Show List");
         var rawButton = m("button.brn-margin.col.btn-med.btn-info", {
             onclick: function () {
                 my.mode = "raw";
-                return my.getMwl();
+                return my.getMwl(my);
             },
         }, "Gen & Show JSON");
         var addButton = m("button.btn-margin.col.btn-med.btn-info", {
@@ -78,7 +82,7 @@ var Main = /** @class */ (function () {
         var deptButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: function () {
                 my.mode = "dept";
-                return my.getDepartments();
+                return my.getDepartments.bind(my)();
             },
         }, "Show Departments");
         var ctrlRow = m(".row", [
@@ -107,9 +111,8 @@ var Main = /** @class */ (function () {
                         finalName = finalName + " ";
                     }
                 }
-                return m(".row", m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]), 
-                // m(".col", item["00400100"].Value[0]["00400003"].Value[0]),
-                m(".col-2", finalName), m(".col-1", item["00100020"].Value[0]), m(".col-1", item["00100030"].Value[0]), m(".col-1", item["00100040"].Value[0]), m(".col-1", item["00400100"].Value[0]["00080060"].Value[0]), m(".col-1", item["00080050"].Value[0]), m(".col-1", item["00081040"].Value[0]), m(".col-2", item["00081030"].Value[0]));
+                return m(".row", m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]
+                    + " " + item["00400100"].Value[0]["00400003"].Value[0]), m(".col-2", finalName), m(".col-1", item["00100020"].Value[0]), m(".col-1", item["00100030"].Value[0]), m(".col-1", item["00100040"].Value[0]), m(".col-1", item["00400100"].Value[0]["00080060"].Value[0]), m(".col-1", item["00080050"].Value[0]), m(".col-1", item["00081040"].Value[0]), m(".col-2", item["00081030"].Value[0]));
             });
             body = m("", listHead, getList(my.rawMwl));
         }

@@ -16,26 +16,35 @@ export class Main implements m.ClassComponent {
     private rawMwl: any[] = [];
     private mode: "add" | "dept" | "mwl" | "raw"  = "mwl";
     private departments: string;
-    private limit = 0;
+    private limit = 100;
     private usedUrl = "";
 
     constructor() {
         this.mwl = "";
         this.departments = "";
+        console.log("Constructed");
     }
 
     public view() {
         const my = this;
         const spacer = m("[style=margin-bottom:10px;]", m.trust("&nbsp;"));
-        const h = m(`h2`, {}, `ZenSnapMD MWL Test Suite`);
+        const h = m("",
+            m(`h2`, {}, `ZenSnapMD MWL Test Suite`),
+            m("a[href=https://github.com/imanabu/dcmWebMwlTestGen][target=_blank]",
+                "Source on GitHub")
+            );
 
         let help = m("");
 
         const limitLabel = m("label[for=limit]", "Limit: ");
         const limit = m("input[id=limit][type=text][style=margin-left:10px]",
             {
-                onchange: m.withAttr("value", (v) => { my.limit = parseInt(v, 10);}),
-                placeholder: "10",
+                onchange: (e:Event) => {
+                    const v = (e.currentTarget as HTMLInputElement).value;
+                    my.limit = parseInt(v, 10);
+                    console.log(`Limit set to ${my.limit}`);
+                    },
+                placeholder: "100",
                 value: my.limit,
             });
         const limitCell = m(".col", [limitLabel, limit]);
@@ -43,13 +52,13 @@ export class Main implements m.ClassComponent {
         const listButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: () => {
                 my.mode = "mwl";
-                return my.getMwl(); },
+                return my.getMwl(my); },
         }, "Gen & Show List");
 
         const rawButton = m("button.brn-margin.col.btn-med.btn-info", {
             onclick: () => {
                 my.mode = "raw";
-                return my.getMwl(); },
+                return my.getMwl(my); },
         }, "Gen & Show JSON");
 
         const addButton = m("button.btn-margin.col.btn-med.btn-info", {
@@ -61,7 +70,7 @@ export class Main implements m.ClassComponent {
         const deptButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: () => {
                 my.mode = "dept";
-                return my.getDepartments();
+                return my.getDepartments.bind(my)();
             },
         }, "Show Departments");
 
@@ -106,8 +115,8 @@ export class Main implements m.ClassComponent {
                 }
 
                 return m(".row",
-                    m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]),
-                    // m(".col", item["00400100"].Value[0]["00400003"].Value[0]),
+                    m(".col-1", item["00400100"].Value[0]["00400002"].Value[0]
+                        + " " + item["00400100"].Value[0]["00400003"].Value[0]),
                     m(".col-2", finalName),
                     m(".col-1", item["00100020"].Value[0]),
                     m(".col-1", item["00100030"].Value[0]),
@@ -138,8 +147,7 @@ export class Main implements m.ClassComponent {
             body]);
     }
 
-    private getMwl = () => {
-        const my = this;
+    private getMwl = (my: Main) => {
         my.mode = "mwl";
         const url = my.limit ? `api/studies?limit=${my.limit}` :
             `api/studies`;
@@ -176,7 +184,6 @@ export class Main implements m.ClassComponent {
                 my.mwl = error.toString();
             }
         );
-
     };
 }
 

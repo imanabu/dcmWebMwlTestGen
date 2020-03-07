@@ -43,9 +43,9 @@ class Utils {
         return s;
     }
 }
+exports.Utils = Utils;
 Utils.uidRoot = "1.2.345.678.90123";
 Utils.sequence = 0;
 Utils.baseIdSequence = 0;
 Utils.idSequence = 0;
-exports.Utils = Utils;
 //# sourceMappingURL=Utils.js.map

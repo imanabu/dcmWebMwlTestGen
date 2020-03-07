@@ -3,10 +3,26 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.7
-Release Date: 20190616
+Version 0.0.8
+Release Date: 20200307
 
 ## New Features and Changes
+
+### 0.0.8
+
+* The limit parameter will just return the requested number of entries. If you want the old behavior
+  you can add force=true parameter, which will generate the number of new entries for the amount listed.
+  
+* The new default is 5000 encounters per 12 hour period now. Please test your stuff to be able to handle
+  this volume, which is a medium-large hospital size during an epidemic scare and such.
+  
+  Reminder: The algorithm is that we generate 
+  new encounters = (total number of encounter/day) * (fraction of the time elapsed from the last call)
+  
+  We will drop the same number of the encounters as the new ones from the list. Consider that 
+  dropped patients are the ones that have been discharged. I know this is not really realistic but
+  it should do for now and any more complex patient flow, you should handle that on your end from
+  the generated list.
 
 ### 0.0.6 - 0.0.7
 

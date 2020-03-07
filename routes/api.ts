@@ -1,7 +1,6 @@
 import config = require("../config/appConfig");
 import express = require("express");
 
-import _ from "lodash/fp";
 import {Request, Response} from "express";
 
 import {INewStudy, IApiResponse, INewStudyDto} from "../model/dtos";
@@ -20,10 +19,12 @@ router.get("/studies", (req: Request, res: Response) => {
     const currentTime = Date.now();
     const elapsedHours = (currentTime - lastGeneratedAt)/(1000*60*60);
 
-    const defaultMode = !req.query.limit;
-
     let limit: number = req.query.limit ? parseInt(req.query.limit, 10) :
         config.generator.defaultMax;
+
+    let force = req.query.force ? req.query.force as string : "";
+
+    const defaultMode = !req.query.limit || !force.startsWith("t");
 
     limit = (limit > config.generator.absoluteMax)  ? config.generator.absoluteMax : limit;
 
@@ -74,11 +75,11 @@ router.get("/studies", (req: Request, res: Response) => {
 
     previousLimit = limit;
 
-    let result = _.sortBy((x) => {
-        return [x["00100010"].Value[0].Alphabetic];
-    })(list);
+    // let result = _.sortBy((x: any) => {
+    //     return [x["00100010"].Value[0].Alphabetic];
+    // })(list);
 
-    res.status(200).json(result);
+    res.status(200).json(list);
 });
 
 router.get("/departments", (req: Request, res: Response) => {
