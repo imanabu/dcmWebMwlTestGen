@@ -25,7 +25,7 @@ export class Main implements m.ClassComponent {
         console.log("Constructed");
     }
 
-    public view() {
+    public view = () => {
         const my = this;
         const spacer = m("[style=margin-bottom:10px;]", m.trust("&nbsp;"));
         const h = m("",
@@ -52,13 +52,13 @@ export class Main implements m.ClassComponent {
         const listButton = m("button.btn-margin.col.btn-med.btn-info", {
             onclick: () => {
                 my.mode = "mwl";
-                return my.getMwl(my); },
+                return my.getMwl(); },
         }, "Gen & Show List");
 
         const rawButton = m("button.brn-margin.col.btn-med.btn-info", {
             onclick: () => {
                 my.mode = "raw";
-                return my.getMwl(my); },
+                return my.getMwl(); },
         }, "Gen & Show JSON");
 
         const addButton = m("button.btn-margin.col.btn-med.btn-info", {
@@ -85,7 +85,6 @@ export class Main implements m.ClassComponent {
         let body: Vnode = m("");
 
         if (my.mode === "mwl") {
-
             help = m(".col.head-room", `Used QIDO API URL: ${my.usedUrl}`);
 
             const listHead = m(".row.list-header",
@@ -145,10 +144,10 @@ export class Main implements m.ClassComponent {
             m(".row", help),
             spacer,
             body]);
-    }
+    };
 
-    private getMwl = (my: Main) => {
-        my.mode = "mwl";
+    private getMwl = () => {
+        const my = this;
         const url = my.limit ? `api/studies?limit=${my.limit}` :
             `api/studies`;
 

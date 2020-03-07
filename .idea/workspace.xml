@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="" />
+    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/Main.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583553455487</updated>
-      <workItem from="1583553457727" duration="11200000" />
+      <workItem from="1583553457727" duration="12381000" />
     </task>
     <task id="LOCAL-00001" summary="Fix a lint issue.">
       <created>1583554006812</created>
@@ -120,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583599565143</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix a lint issue.">
+      <created>1583600189936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583600189936</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Prepare for 0.0.8 release">
+      <created>1583600236585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583600236585</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +179,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix a lint issue." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix a lint issue." />
+    <MESSAGE value="Prepare for 0.0.8 release" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prepare for 0.0.8 release" />
   </component>
   <component name="WindowStateProjectService">
     <state x="439" y="190" key="#Web_Browsers" timestamp="1583594839615">
@@ -171,30 +191,30 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583594919550" />
-    <state x="404" y="125" key="CommitChangelistDialog2" timestamp="1583600189843">
+    <state x="404" y="125" key="CommitChangelistDialog2" timestamp="1583600236489">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="404" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1583600189843" />
-    <state width="1638" height="287" key="GridCell.Tab.0.bottom" timestamp="1583599544121">
+    <state x="404" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1583600236489" />
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom" timestamp="1583601423563">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583599544121" />
-    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583593644239" />
-    <state width="1638" height="287" key="GridCell.Tab.0.center" timestamp="1583599544120">
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423563" />
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312271" />
+    <state width="1638" height="287" key="GridCell.Tab.0.center" timestamp="1583601423562">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="287" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583599544120" />
-    <state width="1638" height="287" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583593644238" />
-    <state width="1638" height="287" key="GridCell.Tab.0.left" timestamp="1583599544120">
+    <state width="1638" height="287" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423562" />
+    <state width="1638" height="287" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312270" />
+    <state width="1638" height="287" key="GridCell.Tab.0.left" timestamp="1583601423561">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="287" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583599544120" />
-    <state width="1638" height="287" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583593644237" />
-    <state width="1638" height="287" key="GridCell.Tab.0.right" timestamp="1583599544121">
+    <state width="1638" height="287" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423561" />
+    <state width="1638" height="287" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312269" />
+    <state width="1638" height="287" key="GridCell.Tab.0.right" timestamp="1583601423563">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="287" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583599544121" />
-    <state width="1638" height="287" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583593644239" />
+    <state width="1638" height="287" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423563" />
+    <state width="1638" height="287" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312270" />
     <state width="1638" height="354" key="GridCell.Tab.1.bottom" timestamp="1583598543262">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -251,25 +271,13 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="571" y="243" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583592027535" />
-    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583599569849">
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583600239312">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1583599569849" />
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1583600239312" />
     <state x="586" y="245" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583593021736">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="586" y="245" key="git4idea.branch.GitSmartOperationDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583593021736" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/client/Main.ts</url>
-          <line>154</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
