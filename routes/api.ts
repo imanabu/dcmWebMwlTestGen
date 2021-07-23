@@ -19,7 +19,10 @@ router.get("/studies", (req: Request, res: Response) => {
     const currentTime = Date.now();
     const elapsedHours = (currentTime - lastGeneratedAt)/(1000*60*60);
 
-    let limit: number = req.query.limit ? parseInt(req.query.limit as string, 10) :
+    let limitParam = req.query.limit as string;
+    limitParam = limitParam ?? "100";
+    let radix = 10;
+    let limit: number = limitParam ? parseInt(limitParam, radix) :
         config.generator.defaultMax;
 
     let force = req.query.force ? req.query.force as string : "";

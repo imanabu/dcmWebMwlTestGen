@@ -1,6 +1,6 @@
 {
   "name": "dcmwebmwltestgen",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "DICOM Web Based Modality Worklist Test Generator",
   "main": "app.js",
   "repository": "https://imanabu@github.com/imanabu/dcmWebMwlTestGen.git",
