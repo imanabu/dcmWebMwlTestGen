@@ -1,10 +1,10 @@
 const appConfig = {
 
     generator: {
-        // 12 makes about 100 case a day hospital.
-        absoluteMax: 250,
-        defaultMax: 20,
-        hourlyPatients: 12,
+        // Makes 5000 encounters every 12 hours
+        absoluteMax: 500,
+        defaultMax: 500,
+        hourlyPatients: 400,
         persistConfig: false,
     },
 

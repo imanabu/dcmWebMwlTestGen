@@ -62,6 +62,10 @@ typings/
 # next.js build output
 .next
 test/300-API.spec.js
-routes/api.js
+routes/*.js
 public/jsd/main.js
 package-lock.json
+client/Main.js
+model/*.js
+services/*.js
+services/Utils.js

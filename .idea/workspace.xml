@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Main.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Ymh0keiJbWNuwzyaFHT7WOqzVg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.JS Debug">
+    <configuration name="JS Debug" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:3000">
+      <mapping url="http://localhost:3000" local-file="$PROJECT_DIR$/client/Main.js" />
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="run" />
+          <scripts>
+            <script value="client-build" />
+          </scripts>
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="run" />
+          <scripts>
+            <script value="build" />
+          </scripts>
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.JS Debug" />
+      <item itemvalue="npm.start" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="" />
+      <created>1583553455487</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583553455487</updated>
+      <workItem from="1583553457727" duration="12648000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fix a lint issue.">
+      <created>1583554006812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583554006812</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix a lint issue.">
+      <created>1583599565143</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583599565143</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix a lint issue.">
+      <created>1583600189936</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583600189936</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Prepare for 0.0.8 release">
+      <created>1583600236585</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583600236585</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix Raw display mode.">
+      <created>1583601515412</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583601515412</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/services/Names.js" />
+        <option value="$PROJECT_DIR$/services/mwlEntryGenerator.js" />
+        <option value="$PROJECT_DIR$/services/PersonGenerator.js" />
+        <option value="$PROJECT_DIR$/services/Utils.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/client/Main.js" />
+        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js" />
+        <option value="$PROJECT_DIR$/test/100.services.spec.js" />
+        <option value="$PROJECT_DIR$/interfaces.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/model/dtos.js" />
+        <option value="$PROJECT_DIR$/model/dtos.js.map" />
+        <option value="$PROJECT_DIR$/app.js.map" />
+        <option value="$PROJECT_DIR$/interfaces.js.map" />
+        <option value="$PROJECT_DIR$/services/Names.js.map" />
+        <option value="$PROJECT_DIR$/services/PersonGenerator.js.map" />
+        <option value="$PROJECT_DIR$/services/mwlEntryGenerator.js.map" />
+        <option value="$PROJECT_DIR$/services/Utils.js.map" />
+        <option value="$PROJECT_DIR$/routes/api.js" />
+        <option value="$PROJECT_DIR$/routes/index.js.map" />
+        <option value="$PROJECT_DIR$/routes/api.js.map" />
+        <option value="$PROJECT_DIR$/test/300-API.spec.js" />
+        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js.map" />
+        <option value="$PROJECT_DIR$/test/100.services.spec.js.map" />
+        <option value="$PROJECT_DIR$/test/300-API.spec.js.map" />
+        <option value="$PROJECT_DIR$/client/Main.js.map" />
+        <option value="$PROJECT_DIR$/client/AddComponent.js" />
+        <option value="$PROJECT_DIR$/client/AddComponent.js.map" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix a lint issue." />
+    <MESSAGE value="Prepare for 0.0.8 release" />
+    <MESSAGE value="Fix Raw display mode." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Raw display mode." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="439" y="190" key="#Web_Browsers" timestamp="1583594839615">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="439" y="190" key="#Web_Browsers/0.0.1680.1050@0.0.1680.1050" timestamp="1583594839614" />
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583594919550">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583594919550" />
+    <state x="404" y="125" key="CommitChangelistDialog2" timestamp="1583601515253">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="404" y="125" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1583601515253" />
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom" timestamp="1583601423563">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423563" />
+    <state width="1638" height="287" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312271" />
+    <state width="1638" height="287" key="GridCell.Tab.0.center" timestamp="1583601423562">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="287" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423562" />
+    <state width="1638" height="287" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312270" />
+    <state width="1638" height="287" key="GridCell.Tab.0.left" timestamp="1583601423561">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="287" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423561" />
+    <state width="1638" height="287" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312269" />
+    <state width="1638" height="287" key="GridCell.Tab.0.right" timestamp="1583601423563">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="287" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583601423563" />
+    <state width="1638" height="287" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583601312270" />
+    <state width="1638" height="354" key="GridCell.Tab.1.bottom" timestamp="1583598543262">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543262" />
+    <state width="1638" height="354" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1583598102920" />
+    <state width="1638" height="354" key="GridCell.Tab.1.center" timestamp="1583598543261">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543261" />
+    <state width="1638" height="354" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1583598102918" />
+    <state width="1638" height="354" key="GridCell.Tab.1.left" timestamp="1583598543261">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543261" />
+    <state width="1638" height="354" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1583598102917" />
+    <state width="1638" height="354" key="GridCell.Tab.1.right" timestamp="1583598543262">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543262" />
+    <state width="1638" height="354" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1583598102919" />
+    <state width="1638" height="354" key="GridCell.Tab.2.bottom" timestamp="1583598543264">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.2.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543264" />
+    <state width="1638" height="354" key="GridCell.Tab.2.center" timestamp="1583598543263">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.2.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543263" />
+    <state width="1638" height="354" key="GridCell.Tab.2.left" timestamp="1583598543263">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.2.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543263" />
+    <state width="1638" height="354" key="GridCell.Tab.2.right" timestamp="1583598543264">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543264" />
+    <state width="1638" height="354" key="GridCell.Tab.3.bottom" timestamp="1583598543266">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.3.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543266" />
+    <state width="1638" height="354" key="GridCell.Tab.3.center" timestamp="1583598543265">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.3.center/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543265" />
+    <state width="1638" height="354" key="GridCell.Tab.3.left" timestamp="1583598543265">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.3.left/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543265" />
+    <state width="1638" height="354" key="GridCell.Tab.3.right" timestamp="1583598543266">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="354" key="GridCell.Tab.3.right/0.0.1680.1050@0.0.1680.1050" timestamp="1583598543266" />
+    <state x="571" y="243" key="RollbackChangesDialog" timestamp="1583592027535">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="571" y="243" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583592027535" />
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1583601542903">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1583601542903" />
+    <state x="586" y="245" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583593021736">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="586" y="245" key="git4idea.branch.GitSmartOperationDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1583593021736" />
+  </component>
+</project>
