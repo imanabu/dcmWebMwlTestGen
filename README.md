@@ -3,10 +3,13 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.9
+Version 0.0.10
 Release Date: 2021-07-23
 
 ## New Features and Changes
+
+### 0.0.10
+* Fixed the limit parameter issue
 
 ### 0.0.9
 
