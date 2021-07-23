@@ -68,3 +68,4 @@ package-lock.json
 client/Main.js
 model/*.js
 services/*.js
+services/Utils.js
