@@ -22,7 +22,7 @@ router.get("/studies", (req: Request, res: Response) => {
 
     const defaultMode = !req.query.limit;
 
-    let limit: number = req.query.limit ? parseInt(req.query.limit, 10) :
+    let limit: number = req.query.limit ? parseInt(req.query.limit as string , 10) :
         config.generator.defaultMax;
 
     limit = (limit > config.generator.absoluteMax)  ? config.generator.absoluteMax : limit;
@@ -74,7 +74,7 @@ router.get("/studies", (req: Request, res: Response) => {
 
     previousLimit = limit;
 
-    let result = _.sortBy((x) => {
+    let result = _.sortBy((x: any) => {
         return [x["00100010"].Value[0].Alphabetic];
     })(list);
 

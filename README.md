@@ -3,10 +3,16 @@
 ## Modality Worklist Test Generator and QIDO Server System
 
 Manabu Tokunaga, GitHub: imanabu
-Version 0.0.7
-Release Date: 20190616
+Version 0.0.8
+Release Date: 2021-07-23
 
 ## New Features and Changes
+
+### 0.0.8
+
+* Addressed compilation error with TS 3.9.6
+* Addressed NPM security issues
+* Ignore .ts derivces .js files from Git
 
 ### 0.0.6 - 0.0.7
 
