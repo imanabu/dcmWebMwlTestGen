@@ -8,13 +8,17 @@ Release Date: 2021-07-23
 
 ## New Features and Changes
 
+### 0.0.11
+
+Docker container support added
+
 ### 0.0.10
 * Fixed the limit parameter issue
 
 ### 0.0.9
 
 * Security Update
-* Compiler compatilibity updates for TypeScript 3.9.6
+* Compiler compatibility updates for TypeScript 3.9.6
 
 ### 0.0.8
 
@@ -64,8 +68,7 @@ No bugs
 
 ## Introduction
 
-When you are testing or a demo-ing a PACS or a modality, we often need to start from a Modality Worklist 
-and I always needed some ways of automatically generating them and I also want them to look somewhat
+When you are testing or a demo-ing a PACS or a modality, we often need to start from a Modality Worklist, and I always needed some ways of automatically generating them, and I also want them to look somewhat
 real and gender correct in terms of how the names are presented.
 
 So I wrote a Node/Express app to generate a bunch of visits with hospital departments
@@ -116,6 +119,13 @@ When the DICOM QIDO request is made for /studies it returns the MWL entries
 (instead of modality studies).
 
 ## How To Install, Run and Improve It
+
+### If you want to just run this with the Docker...
+
+    docker pull voxeleron/dcm-mwl-testgen
+    docker run --rm -p 3000:3000 voxeleron/dcm-mwl-testgen
+
+### If you want to run directly on your machine or want to develop further...
 
 This is a NodeJS/Express project and written in TypeScript and so you would do the following.
 

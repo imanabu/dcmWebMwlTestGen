@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Main.js" beforeDir="false" />
+    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="* Docker container support">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +31,10 @@
   <component name="ProjectId" id="1Ymh0keiJbWNuwzyaFHT7WOqzVg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -49,9 +48,21 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.JS Debug">
-    <configuration name="JS Debug" type="JavascriptDebugType" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:3000">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JS Debug" type="JavascriptDebugType" uri="http://localhost:3000">
       <mapping url="http://localhost:3000" local-file="$PROJECT_DIR$/client/Main.js" />
       <method v="2">
         <option name="NpmBeforeRunTask" enabled="true">
@@ -100,6 +111,7 @@
       <item itemvalue="npm.start" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="" />
@@ -108,6 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583553455487</updated>
       <workItem from="1583553457727" duration="12648000" />
+      <workItem from="1628293356377" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="Fix a lint issue.">
       <created>1583554006812</created>
@@ -144,49 +157,68 @@
       <option name="project" value="LOCAL" />
       <updated>1583601515412</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="* Docker container support">
+      <created>1628296076537</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628296076537</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/services/Names.js" />
-        <option value="$PROJECT_DIR$/services/mwlEntryGenerator.js" />
-        <option value="$PROJECT_DIR$/services/PersonGenerator.js" />
-        <option value="$PROJECT_DIR$/services/Utils.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/client/Main.js" />
-        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js" />
-        <option value="$PROJECT_DIR$/test/100.services.spec.js" />
-        <option value="$PROJECT_DIR$/interfaces.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/model/dtos.js" />
-        <option value="$PROJECT_DIR$/model/dtos.js.map" />
-        <option value="$PROJECT_DIR$/app.js.map" />
-        <option value="$PROJECT_DIR$/interfaces.js.map" />
         <option value="$PROJECT_DIR$/services/Names.js.map" />
-        <option value="$PROJECT_DIR$/services/PersonGenerator.js.map" />
+        <option value="$PROJECT_DIR$/services/Names.js" />
         <option value="$PROJECT_DIR$/services/mwlEntryGenerator.js.map" />
+        <option value="$PROJECT_DIR$/services/mwlEntryGenerator.js" />
+        <option value="$PROJECT_DIR$/services/PersonGenerator.js.map" />
+        <option value="$PROJECT_DIR$/services/PersonGenerator.js" />
         <option value="$PROJECT_DIR$/services/Utils.js.map" />
+        <option value="$PROJECT_DIR$/services/Utils.js" />
+        <option value="$PROJECT_DIR$/routes/api.js.map" />
         <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/routes/index.js.map" />
-        <option value="$PROJECT_DIR$/routes/api.js.map" />
-        <option value="$PROJECT_DIR$/test/300-API.spec.js" />
-        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js.map" />
-        <option value="$PROJECT_DIR$/test/100.services.spec.js.map" />
-        <option value="$PROJECT_DIR$/test/300-API.spec.js.map" />
-        <option value="$PROJECT_DIR$/client/Main.js.map" />
-        <option value="$PROJECT_DIR$/client/AddComponent.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/client/AddComponent.js.map" />
+        <option value="$PROJECT_DIR$/client/AddComponent.js" />
+        <option value="$PROJECT_DIR$/client/Main.js.map" />
+        <option value="$PROJECT_DIR$/client/Main.js" />
+        <option value="$PROJECT_DIR$/model/dtos.js.map" />
+        <option value="$PROJECT_DIR$/model/dtos.js" />
+        <option value="$PROJECT_DIR$/test/100.services.spec.js.map" />
+        <option value="$PROJECT_DIR$/test/100.services.spec.js" />
+        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js.map" />
+        <option value="$PROJECT_DIR$/test/200-Mwl.spec.js" />
+        <option value="$PROJECT_DIR$/test/300-API.spec.js.map" />
+        <option value="$PROJECT_DIR$/test/300-API.spec.js" />
+        <option value="$PROJECT_DIR$/interfaces.js.map" />
+        <option value="$PROJECT_DIR$/interfaces.js" />
+        <option value="$PROJECT_DIR$/app.js.map" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix a lint issue." />
     <MESSAGE value="Prepare for 0.0.8 release" />
     <MESSAGE value="Fix Raw display mode." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Raw display mode." />
+    <MESSAGE value="* Docker container support" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Docker container support" />
   </component>
   <component name="WindowStateProjectService">
     <state x="439" y="190" key="#Web_Browsers" timestamp="1583594839615">
