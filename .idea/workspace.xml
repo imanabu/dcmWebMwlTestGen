@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-build.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="697b07fc-c575-44f8-b9dd-f1e0b0b4999b" name="Default Changelist" comment="* Docker container support">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583553455487</updated>
       <workItem from="1583553457727" duration="12648000" />
-      <workItem from="1628293356377" duration="2572000" />
+      <workItem from="1628293356377" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="Fix a lint issue.">
       <created>1583554006812</created>
@@ -160,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583601515412</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="* Docker container support">
+      <created>1628296076537</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628296076537</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +217,8 @@
     <MESSAGE value="Fix a lint issue." />
     <MESSAGE value="Prepare for 0.0.8 release" />
     <MESSAGE value="Fix Raw display mode." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Raw display mode." />
+    <MESSAGE value="* Docker container support" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Docker container support" />
   </component>
   <component name="WindowStateProjectService">
     <state x="439" y="190" key="#Web_Browsers" timestamp="1583594839615">
