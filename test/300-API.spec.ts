@@ -1,10 +1,11 @@
 // import * as _ from "lodash/fp";
-import {after, before, describe, it} from "mocha";
 // import express = require("express");
-import assert = require("assert");
-import request = require("superagent");
-import s = require("../app");
-import config = require("../config/appConfig");
+{
+const assert: typeof import("assert") = require("assert");
+const {after, before, describe, it}: typeof import("mocha") = require("mocha");
+const request: typeof import("superagent") = require("superagent");
+const s = require("../app");
+const config = require("../config/appConfig");
 
 const myApp: any = s;
 let server: any = {};
@@ -129,3 +130,4 @@ describe("Test ZenForms Express Server APIs.", () => {
 
     });
 });
+}

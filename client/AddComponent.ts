@@ -83,7 +83,7 @@ export class AddComponent implements ClassComponent {
             let opt = {} as RequestOptions<IApiResponse<any>>;
             opt.method = "POST";
             let data: INewStudyDto = {} as INewStudyDto;
-            opt.data = data;
+            opt.body = data;
             const ent = my.ent;
 
             data.accession = ent.accession;

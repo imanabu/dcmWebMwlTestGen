@@ -1,7 +1,7 @@
 import {Application} from "express";
 import config = require("./config/appConfig");
 import express = require("express");
-import slowDown = require("express-slow-down");
+import {slowDown} from "express-slow-down";
 import path = require("path");
 const cookieParser: any = require("cookie-parser");
 const lessMiddleware: any = require("less-middleware");
@@ -14,7 +14,7 @@ const app = express();
 
 const speedLimiter = slowDown(config.speedLimit);
 
-app.enable("trust proxy");
+app.set("trust proxy", "loopback");
 app.use(speedLimiter);
 app.use(logger("dev"));
 app.use(express.json());

@@ -1,7 +1,7 @@
-import {MwlEntryGenerator} from "../services/mwlEntryGenerator";
-import assert from "assert";
-
-import {describe, it} from "mocha";
+{
+const assert: typeof import("assert") = require("assert");
+const {describe, it}: typeof import("mocha") = require("mocha");
+const {MwlEntryGenerator}: typeof import("../services/mwlEntryGenerator") = require("../services/mwlEntryGenerator");
 
 describe("MWL Generator Test", () => {
     describe("Make sure MWL Generator does Generate", () => {
@@ -14,4 +14,4 @@ describe("MWL Generator Test", () => {
         });
     });
 });
-
+}

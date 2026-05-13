@@ -1,206 +1,235 @@
 # dcmWebMwlTestGen
 
-## Modality Worklist Test Generator and QIDO Server System
+DICOMweb Modality Worklist test data generator.
 
-Manabu Tokunaga, GitHub: imanabu
-Version 0.0.12
-Release Date: 2021-11-27
+This project is a small Node.js and Express application that generates realistic
+test worklist entries and exposes them through a DICOMweb-style QIDO endpoint.
+It is useful when you need test data for PACS, modality, imaging workflow, or
+demo environments without setting up a full RIS, database, or hospital system.
 
-## New Features and Changes
+The app also includes a browser UI for viewing generated worklist entries as a
+list or as raw JSON.
 
-# 0.0.12
+## What It Generates
 
-npm recommended security updates
+- Patient names, MRNs, accession numbers, study dates, and DICOM UIDs
+- Referring and performing physician names
+- Department-specific modalities and reasons for study
+- Configurable worklist size and simulated patient flow over time
+- Manually added patient-study records for matching external test systems
 
-### 0.0.11
+Generated names are synthetic and based on name lists, not real patient data.
 
-Docker container support added
+## Quick Start
 
-### 0.0.10
-* Fixed the limit parameter issue
+Install dependencies:
 
-### 0.0.9
+```bash
+yarn install
+```
 
-* Security Update
-* Compiler compatibility updates for TypeScript 3.9.6
+Build the TypeScript server and browser client:
 
-### 0.0.8
+```bash
+npm run build
+```
 
-* The limit parameter will just return the requested number of entries. If you want the old behavior
-  you can add force=true parameter, which will generate the number of new entries for the amount listed.
-  
-* The new default is 5000 encounters per 12 hour period now. Please test your stuff to be able to handle
-  this volume, which is a medium-large hospital size during an epidemic scare and such.
-  
-  Reminder: The algorithm is that we generate 
-  new encounters = (total number of encounter/day) * (fraction of the time elapsed from the last call)
-  
-  We will drop the same number of the encounters as the new ones from the list. Consider that 
-  dropped patients are the ones that have been discharged. I know this is not really realistic but
-  it should do for now and any more complex patient flow, you should handle that on your end from
-  the generated list.
+Start the server:
 
-### 0.0.6 - 0.0.7
+```bash
+npm start
+```
 
-* Manually add new patient-studies with your choice of information. 
-  Use this to create a correlated encounter already on the EHR/PACS.
+Open the UI:
 
-### 0.0.5
+```text
+http://localhost:3000
+```
 
-* The configuration is now a plain json and stored in config/appConfig.js
-* More realistic generation of encounters now. Repeated default /api/studies will only provide
-  list changes as specified in the configuration. So for example, if you set up 12 encounter per hour,
-  only 12 new patients will be ordered in that hour. And the queue will automatically remove the
-  people to maintain the size as specified by the `defaultMax`.
-  
-* New `?houlry=number` URL parameter can also use to specify the hourly patient addition rate.
-  New patients will be added and the same number of existing ones will fall off the list.
-  This will emulate clinics completing exams.
-  New generation is computed on an hourly rate basis from the last generation. 
-  
-* URL `limit` and `hourly` parameters will persist for the duration of the server's lifecycle.
-  Once the `limit` or `hourly` in a query is used that value will persist and will be used
-  for next request even without the limit and hourly parameter *if* `persistConfig` is true.
-  
-  By default the configuration is set to 96 encounters for 8 hours or 12 new encounters per hour.
-  
-* In preparation for public access, rate and quantity limit is now enforceable and configurable.
+Fetch generated studies:
 
-## Fixed In This Release
+```text
+http://localhost:3000/api/studies
+```
 
-No bugs
+## API
 
-## Introduction
+### `GET /api/studies`
 
-When you are testing or a demo-ing a PACS or a modality, we often need to start from a Modality Worklist, and I always needed some ways of automatically generating them, and I also want them to look somewhat
-real and gender correct in terms of how the names are presented.
+Returns generated worklist entries as DICOM-style JSON.
 
-So I wrote a Node/Express app to generate a bunch of visits with hospital departments
-associated, and serve them up via the DICOM QIDO /studies API. Because I do need to map the
-departments with real existing ones at the hospital, you can also configure realistic
-clinical department configurations as well.
+```text
+http://localhost:3000/api/studies
+```
 
-I am keeping this as simple as possible without a asking you to configure Java or MongoDB or MySQL.
+### `GET /api/studies?limit=100`
 
+Returns a requested number of entries, capped by `generator.absoluteMax` in
+[config/appConfig.js](config/appConfig.js).
 
-## What It Does
+```text
+http://localhost:3000/api/studies?limit=100
+```
 
-It auto-generates fairly realistic Modality Worklist entries for testing the workflow. We often need
-to test this from the MWL all the way to acquisition in our mobile photo app ZenSnapMD.com
+### `GET /api/studies?hourly=25`
 
-As such you can also use this to generate visits to feed the rest of your test workflow.
+Changes the simulated hourly patient generation rate for that request.
 
-Among the things this generates are;
+```text
+http://localhost:3000/api/studies?hourly=25
+```
 
-* Realistic people names, correct with genders. Patient, Referring and Performing doctor names
-are generated along with fairly unique MRN, Accession and truly unique Study and Instance UIDs.
-  
-  Names are synthesized by combining the list of names from a recent US Census data, so
-  even how the names sound are fairly modern.
-  
-  Note that MRN/Accession are time based but the top digits are truncated so it might repeat some day.
-  
-  The age of the patients are synthesized based on a random pick but will range from
-  anywhere from 0 to 95 years old based on the date of generation. We could be more
-  realistic and use a standard age distribution, but I did not do that (yet).
-  
-* Study dates are today's as you generate the worklist.
+### `GET /api/departments`
 
-It also has a UI to show/demonstrate you what it generates and show the resulting worklist
-items as a list or the raw JSON data.
+Returns the configured department, modality, and study reason data.
 
-### List View of the Worklist Generated
+```text
+http://localhost:3000/api/departments
+```
 
-![Screen 1](scerenshots/2019-04-08_13-23-57.png)
+### `POST /api/study/add`
 
-### JSON View of the Worklist Generated
+Adds a custom patient-study record to the generated worklist.
 
-![Screen 2](scerenshots/2019-04-08_13-24-14.png)
+Example body:
 
-## How Does It Work?
+```json
+{
+  "accession": "ACC12345",
+  "dob": "1980-01-01T00:00:00.000Z",
+  "gender": "O",
+  "mrn": "MRN12345",
+  "modality": "VL",
+  "patientName": "SMITH^ALEX",
+  "reason": "Test encounter",
+  "studyDate": "2026-05-13T00:00:00.000Z",
+  "studyUid": "1.2.826.0.1.3680043.10.1000.1"
+}
+```
 
-When the DICOM QIDO request is made for /studies it returns the MWL entries 
-(instead of modality studies).
+## Configuration
 
-## How To Install, Run and Improve It
+Main configuration lives in [config/appConfig.js](config/appConfig.js).
 
-### If you want to just run this with the Docker...
+Important settings:
 
-    docker pull voxeleron/dcm-mwl-testgen
-    docker run --rm -p 3000:3000 voxeleron/dcm-mwl-testgen
+- `generator.defaultMax`: default number of generated entries
+- `generator.absoluteMax`: upper limit for generated entries
+- `generator.hourlyPatients`: simulated patient turnover per hour
+- `generator.persistConfig`: whether query parameters should persist during the server lifecycle
+- `speedLimit`: request slowdown settings
+- `departments`: active departments, modalities, and reasons for study
 
-### If you want to run directly on your machine or want to develop further...
+Department example:
 
-This is a NodeJS/Express project and written in TypeScript and so you would do the following.
+```js
+{
+  active: true,
+  department: "CARD",
+  modalities: ["US", "MR", "DX", "VL"],
+  reasons: [
+    "Unstable angina",
+    "Precordial pain"
+  ]
+}
+```
 
-1. Install NodeJS and npm
-2. Install TypeScript 3.x or later
-3. Compile and Run
+Department fields:
 
-Once NodeJS and npm is installed in your environment, you would do the following,
+- `active`: whether this department participates in generated entries
+- `department`: department code or display name, mapped into the DICOM response
+- `modalities`: possible modalities for this department
+- `reasons`: possible study reasons for this department
 
-1. `npm install`
-2. `npm build`
-3. `npm start`
-4. `http://localhost:3000` for a UI to demonstrate the data it generates
-5. `http://localhost:3000/api/studies` to fire a QIDO GET for studies (worklist)
+## Development
 
-And by default it should be listening at the Port 3000 of your local system.
+Common commands:
 
-## What Works For This Version and What Does Not
+```bash
+npm run build
+npm test
+npm start
+```
 
-### Bare-Bone DICOM Web QIDO-GET Behavior
+The server is written in TypeScript and compiled with the root
+[tsconfig.json](tsconfig.json). The browser client is in [client](client) and is
+bundled with webpack into `public/jsd/main.js`.
 
-`http://localhost:3000/api/studies`
+The project currently keeps generated JavaScript files in the repository. After
+editing TypeScript, run `npm run build` so the generated files stay in sync.
 
-At this point no date range query nor 
-element level query is supported. (You are welcome to add those things. Just fork it.)
-Go ahead and specify them but they will be ignored.
+## Running Tests
 
-Only exception to that is that it supports `?limit=number` can be used to request the generation quantity.
-This is limited to 250 by configuration, but can be changed. 1000s of entries can be generated quickly.
+Run the full suite:
 
-The default is hardwired to 10.
+```bash
+npm test
+```
 
-Example with Limit: `http://localhost:3000/api/studies?limit=200`
+The package test command compiles TypeScript first and then runs the compiled
+JavaScript tests. This keeps the command compatible with current Mocha and
+Node.js behavior.
 
-## Configuring Departments and Associated Reasons for Study
+For IDEs that run `.ts` specs directly with `ts-node/register`, the test files
+use CommonJS `require` bindings so extensionless local imports resolve reliably.
 
-There is a department configuration file called `Config.ts` at the root of the project.
-You can edit this to create various departments and some strings to select study reasons
-randomly.
+## Docker
 
-    [
-       {
-          "active": true,
-          "department": "1234",
-          "modalities": [ "CT", "VL" ],
-          "reasons": [
-             "Minor Burn",
-             "Fall",
-             "Cut",
-             "Fracture"
-          ]
-       },...
-    ]
+Build an image:
 
-* active: Means this entry will be used. 
-* department: It can be a code or a string like ER/ED. It maps to (0008,1040)
-* modalities: The modalities the department uses or requests.
-* reasons: List of the list of study reasons that can happen in this department.
+```bash
+docker build -t dcm-mwl-testgen .
+```
 
-## About the UI
+Run it:
 
-Use the [UI Client](http://localhost:3000) to see what it generates. The codes are
-under [client](/client) directory. The client is compiled as ES5 target to allow
-its use in not-so-modern browsers. The server uses the latest Node and ES2015.
+```bash
+docker run --rm -p 3000:3000 dcm-mwl-testgen
+```
 
-This is also an example of writing an HTML client program. 
+Then open:
 
-## Contributions Are Welcome
+```text
+http://localhost:3000
+```
 
-* For minor stuff or you are not a code but have ideas please file the request in the Git Issues.
+## Screenshots
 
-* Please stick with Mithril.js + webpack.
+List view:
 
-* Let's keep this to work only with npm and no other build tools.
+![List view](scerenshots/2019-04-08_13-23-57.png)
+
+JSON view:
+
+![JSON view](scerenshots/2019-04-08_13-24-14.png)
+
+## Project Notes
+
+This is intentionally a lightweight test tool. It does not implement the full
+DICOMweb QIDO query model. Unsupported query parameters are currently ignored.
+
+The goal is to provide useful, realistic-enough worklist data quickly, with a
+small codebase that is easy to inspect and modify.
+
+## Contributing
+
+Issues, fixes, and small improvements are welcome.
+
+Before submitting a change:
+
+```bash
+npm run build
+npm test
+```
+
+Please keep the project simple and consistent with the existing stack:
+
+- Node.js
+- Express
+- TypeScript
+- Mithril
+- webpack
+
+## License
+
+ISC

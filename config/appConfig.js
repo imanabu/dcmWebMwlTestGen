@@ -12,7 +12,10 @@ const appConfig = {
         // See https://www.npmjs.com/package/express-slow-down
         windowMs: 15 * 60 * 1000, // 15 minutes
         delayAfter: 120, // allow 100 requests per 15 minutes, then...
-        delayMs: 1500 // begin adding 500ms of delay per request above 100:
+        delayMs: 1500, // add a 1500ms delay after the limit is reached
+        validate: {
+            delayMs: false
+        }
     },
 
     departments: [

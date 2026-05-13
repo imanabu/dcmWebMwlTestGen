@@ -1,8 +1,8 @@
-import assert from "assert";
-
-import {describe, it} from "mocha";
-import {PersonGenerator} from "../services/PersonGenerator";
-import {Utils} from "../services/Utils";
+{
+const assert: typeof import("assert") = require("assert");
+const {describe, it}: typeof import("mocha") = require("mocha");
+const {PersonGenerator}: typeof import("../services/PersonGenerator") = require("../services/PersonGenerator");
+const {Utils}: typeof import("../services/Utils") = require("../services/Utils");
 
 describe("Test if Mocha is installed right.", () => {
     describe("Making sure mocha is installed correctly.", () => {
@@ -50,3 +50,4 @@ describe("Utils and Generator Functions", () => {
         });
     });
 });
+}

@@ -1,22 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AddComponent = void 0;
-var m = require("mithril");
-var AddComponent = /** @class */ (function () {
-    function AddComponent() {
-        var _this = this;
+const m = require("mithril");
+class AddComponent {
+    constructor() {
         this.ent = {};
         this._status = "";
-        this.oninit = function () {
-            _this.ent.studyDate = new Date();
+        this.oninit = () => {
+            this.ent.studyDate = new Date();
         };
-        this.view = function () {
-            var my = _this;
-            var dateParse = function (v) {
+        this.view = () => {
+            const my = this;
+            const dateParse = (v) => {
                 try {
-                    var nd = new Date(v);
+                    let nd = new Date(v);
                     if (nd.toLocaleDateString().indexOf("Invalid") === 0) {
-                        my.status = "Please correct the date " + v;
+                        my.status = `Please correct the date ${v}`;
                         return undefined;
                     }
                     else {
@@ -24,18 +23,18 @@ var AddComponent = /** @class */ (function () {
                     }
                 }
                 catch (why) {
-                    my.status = "Bad date string " + v + " " + why;
+                    my.status = `Bad date string ${v} ${why}`;
                 }
             };
-            var oninput = function (e) {
-                var t = e.currentTarget;
-                var v = t.value;
+            const oninput = (e) => {
+                const t = e.currentTarget;
+                const v = t.value;
                 switch (t.id) {
                     case "acc":
                         my.ent.accession = v ? v : "";
                         break;
                     case "dob":
-                        var dp = dateParse(v);
+                        const dp = dateParse(v);
                         my.ent.dob = dp;
                         break;
                     case "gender":
@@ -59,7 +58,7 @@ var AddComponent = /** @class */ (function () {
                         my.ent.reason = v ? v : "";
                         break;
                     case "sd":
-                        var sd = dateParse(v);
+                        const sd = dateParse(v);
                         my.ent.studyDate = sd;
                         break;
                     case "studyuid":
@@ -67,13 +66,13 @@ var AddComponent = /** @class */ (function () {
                         break;
                 }
             };
-            var onCreate = function () {
-                var my = _this;
-                var opt = {};
+            const onCreate = () => {
+                const my = this;
+                let opt = {};
                 opt.method = "POST";
-                var data = {};
-                opt.data = data;
-                var ent = my.ent;
+                let data = {};
+                opt.body = data;
+                const ent = my.ent;
                 data.accession = ent.accession;
                 data.gender = ent.gender ? ent.gender : "O";
                 data.mrn = ent.mrn ? ent.mrn : "";
@@ -88,11 +87,11 @@ var AddComponent = /** @class */ (function () {
                 data.dob = ent.dob ? ent.dob.toISOString() : "";
                 data.studyDate = ent.studyDate ? ent.studyDate.toISOString() : "";
                 m.request("api/study/add", opt)
-                    .then(function (res) {
+                    .then((res) => {
                     my.status = res.message;
                     return res;
                 })
-                    .catch(function (err) {
+                    .catch((err) => {
                     my.status = err.message;
                     return err;
                 });
@@ -139,18 +138,13 @@ var AddComponent = /** @class */ (function () {
             }, "Create")));
         };
     }
-    Object.defineProperty(AddComponent.prototype, "status", {
-        get: function () {
-            return this._status;
-        },
-        set: function (v) {
-            this._status = v;
-            m.redraw();
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return AddComponent;
-}());
+    set status(v) {
+        this._status = v;
+        m.redraw();
+    }
+    get status() {
+        return this._status;
+    }
+}
 exports.AddComponent = AddComponent;
 //# sourceMappingURL=AddComponent.js.map
